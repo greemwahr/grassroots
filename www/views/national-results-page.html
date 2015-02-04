@@ -1,0 +1,41 @@
+<ion-view>
+	<ion-content ng-controller="resultCollationCtrl">
+		<ion-slide-box>
+			<ion-slide>
+				<div class="list">
+					<a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
+						<img src="{{partyAbbr.avatar}}">
+						<label class="item item-input item-floating-label">
+							<span class="input-label">{{partyAbbr.abbr}}</span>
+							<input type="text" placeholder="{{partyAbbr.abbr}}">
+						</label>
+					</a>
+				</div>
+			</ion-slide>
+
+			<ion-slide>
+				<div class="list">
+					<a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
+						<img src="{{partyAbbr.avatar}}">
+						<label class="item item-input item-floating-label">
+							<span class="input-label">{{partyAbbr.abbr}}</span>
+							<input type="text" placeholder="{{partyAbbr.abbr}}">
+						</label>
+					</a>
+				</div>
+			</ion-slide>
+
+			<ion-slide>
+				<div class="list">
+					<a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
+						<img src="{{partyAbbr.avatar}}">
+						<label class="item item-input item-floating-label">
+							<span class="input-label">{{partyAbbr.abbr}}</span>
+							<input type="text" placeholder="{{partyAbbr.abbr}}">
+						</label>
+					</a>
+				</div>
+			</ion-slide>
+		</ion-slide-box>
+	</ion-content>
+</ion-view>
