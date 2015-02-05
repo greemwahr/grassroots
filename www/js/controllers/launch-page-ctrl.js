@@ -42,6 +42,7 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv){
 			function anonvert() {
 				if($scope.anonuser !== null) {
 					$state.go('observer.national');
+					$scope.modal.remove();
 				}
 			}
 			return anonvert();
