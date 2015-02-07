@@ -32,7 +32,7 @@
                     <ion-item nav-clear menu-close ng-click="indexSlide(1, 1)"><a class="item-icon-right"><i class="icon ion-ribbon-b"></i>State legislators</a></ion-item>
                 <ion-item class="item-divider">More</ion-item>
                     <ion-item nav-clear menu-close><a class="item-icon-right" href="www.getcounted.org" style="text-decoration: none; color: #444444"><i class="icon ion-earth"></i>getcounted.org</a></ion-item>
-                    <ion-item nav-clear menu-close><a class="item-icon-right"><i class="icon ion-share"></i>Share</a></ion-item>
+                    <ion-item nav-clear menu-close ng-controller="socialShareCtrl"><a class="item-icon-right" ng-click="shareAnywhere()"><i class="icon ion-share"></i>Share</a></ion-item>
                     <ion-item nav-clear menu-close ng-controller="launchPageCtrl"><a class="item-icon-right" ng-click="logout()"><i class="icon ion-log-out"></i>Logout</a></ion-item>
                 <ion-item class="item-divider">About</ion-item>
                     <ion-item nav-clear menu-close><a class="item-icon-right"><i class="icon ion-clipboard"></i>Terms &amp; Conditions</a></ion-item>

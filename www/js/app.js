@@ -39,10 +39,10 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase'])
     //   templateUrl: "views/skip-page.html"
     // })
     
-    .state('login', {
-      url: "/login",
-      templateUrl: "views/social-login-page.html"
-    })
+    // .state('login', {
+    //   url: "/login",
+    //   templateUrl: "views/social-login-page.html"
+    // })
     
     .state('observer', {
       abstract: true,

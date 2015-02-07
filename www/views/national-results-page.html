@@ -1,6 +1,6 @@
-<ion-view>
+<ion-view ng-controller="menuLinkCtrl" view-title="{{navTitle.name}}">
 	<ion-content ng-controller="resultCollationCtrl">
-		<ion-slide-box>
+		<ion-slide-box on-slide-changed="currInd()">
 			<ion-slide>
 				<div class="list">
 					<a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
@@ -44,8 +44,8 @@
 					</a>
 				</div>
 
-				<div style="text-align: center">
-					<button class="button icon-right ion-ios7-location-outline button-assertive" >Submit</button>
+				<div style="text-align: center" ng-controller="popUpCtrl">
+					<button class="button icon-right ion-ios7-location-outline button-assertive" ng-click="showConfirm()">Submit</button>
 				</div>
 			</ion-slide>
 		</ion-slide-box>
