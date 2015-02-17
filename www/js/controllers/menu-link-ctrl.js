@@ -18,10 +18,10 @@ function menuLinkCtrl($scope, $ionicTabsDelegate, $ionicSlideBoxDelegate) {
 	$scope.currInd = function() {
 		var navTitle = {name: ""};
 
-		if($ionicSlideBoxDelegate.currentIndex() == 0) {
+		if($ionicSlideBoxDelegate.currentIndex() === 0) {
 			navTitle.name = "Presidential";
 			console.log(navTitle.name);
-		} else if($ionicSlideBoxDelegate.currentIndex() == 1) {
+		} else if($ionicSlideBoxDelegate.currentIndex() === 1) {
 			navTitle.name = "Senatorial";
 			console.log(navTitle.name);
 		} else {
@@ -31,5 +31,7 @@ function menuLinkCtrl($scope, $ionicTabsDelegate, $ionicSlideBoxDelegate) {
 		return navTitle.name;
 	};
 
-	$scope.currInd();
+	$scope.$on("$ionicView.enter",function(){
+		$ionicSlideBoxDelegate.update();
+	});
 }

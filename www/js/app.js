@@ -27,23 +27,23 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
+
     .state('launchpage', {
       url: "/launchpage",
       templateUrl: "views/launch-page.html",
       controller: "launchPageCtrl"
     })
-    
+
     // .state('skippage', {
     //   url: "/skippage",
     //   templateUrl: "views/skip-page.html"
     // })
-    
+
     // .state('login', {
     //   url: "/login",
     //   templateUrl: "views/social-login-page.html"
     // })
-    
+
     .state('observer', {
       abstract: true,
       url: "/observer",
@@ -69,8 +69,8 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase'])
     });
 
   // if none of the above states are matched, use this as the fallback
-  
+
   $urlRouterProvider.otherwise('/launchpage');
-  
+
 
 });

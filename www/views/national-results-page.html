@@ -1,45 +1,46 @@
 <ion-view ng-controller="menuLinkCtrl" view-title="{{navTitle.name}}">
+	<location-picker ng-model="pickLocation" limit-to="1"></location-picker>
 	<ion-content ng-controller="resultCollationCtrl">
 		<ion-slide-box on-slide-changed="currInd()">
 			<ion-slide>
 				<div class="list">
 					<a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
-						<img src="{{partyAbbr.avatar}}">
+						<img ng-src="{{partyAbbr.avatar}}">
 						<label class="item item-input item-floating-label">
 							<span class="input-label">{{partyAbbr.abbr}}</span>
-							<input type="text" placeholder="{{partyAbbr.abbr}}">
+							<input type="number" placeholder="{{partyAbbr.abbr}}">
 						</label>
 					</a>
 				</div>
 
 				<div style="text-align: center">
-					<button class="button icon-right ion-ios7-location-outline button-assertive" >Submit</button>
+					<button class="button icon-right ion-ios7-location-outline button-assertive">Submit</button>
 				</div>
 			</ion-slide>
 
 			<ion-slide>
 				<div class="list">
 					<a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
-						<img src="{{partyAbbr.avatar}}">
+						<img ng-src="{{partyAbbr.avatar}}">
 						<label class="item item-input item-floating-label">
 							<span class="input-label">{{partyAbbr.abbr}}</span>
-							<input type="text" placeholder="{{partyAbbr.abbr}}">
+							<input type="number" placeholder="{{partyAbbr.abbr}}">
 						</label>
 					</a>
 				</div>
 
 				<div style="text-align: center">
-					<button class="button icon-right ion-ios7-location-outline button-assertive" >Submit</button>
+					<button class="button icon-right ion-ios7-location-outline button-assertive">Submit</button>
 				</div>
 			</ion-slide>
 
 			<ion-slide>
 				<div class="list">
 					<a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
-						<img src="{{partyAbbr.avatar}}">
+						<img ng-src="{{partyAbbr.avatar}}">
 						<label class="item item-input item-floating-label">
 							<span class="input-label">{{partyAbbr.abbr}}</span>
-							<input type="text" placeholder="{{partyAbbr.abbr}}">
+							<input type="number" placeholder="{{partyAbbr.abbr}}">
 						</label>
 					</a>
 				</div>

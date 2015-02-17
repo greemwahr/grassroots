@@ -1,7 +1,7 @@
 /**
 * launchPageCtrl
 *
-* Description
+* Controller for logging in with Facebook, Anonymous logon and also logout.
 */
 
 angular.module('grassroots').controller('launchPageCtrl', ['$state', '$scope', '$ionicModal', 'fireBaseSrv', launchPageCtrl]);

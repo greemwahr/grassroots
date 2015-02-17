@@ -11,11 +11,5 @@ function fireBaseSrv($firebase){
 
 	var ref = new Firebase("https://sweltering-torch-3548.firebaseio.com");
 
-	// return {
-	// 	ref: function () {
-	// 		return ref;
-	// 	}
-	// };
-
 	return ref;
 }
