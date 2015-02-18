@@ -34,16 +34,6 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase'])
       controller: "launchPageCtrl"
     })
 
-    // .state('skippage', {
-    //   url: "/skippage",
-    //   templateUrl: "views/skip-page.html"
-    // })
-
-    // .state('login', {
-    //   url: "/login",
-    //   templateUrl: "views/social-login-page.html"
-    // })
-
     .state('observer', {
       abstract: true,
       url: "/observer",
@@ -72,6 +62,10 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase'])
 
   $urlRouterProvider.otherwise('/launchpage');
 
+})
+
+.config(function($ionicConfigProvider) {
+    $ionicConfigProvider.platform.android.tabs.position('bottom');
 })
 
 // .config(function($cordovaInAppBrowserProvider, $ionicPlatform) {
