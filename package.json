@@ -17,6 +17,8 @@
   "cordovaPlugins": [
     "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
     "https://github.com/apache/cordova-plugin-geolocation.git",
-    "org.apache.cordova.network-information"
+    "org.apache.cordova.network-information",
+    "org.apache.cordova.inappbrowser",
+    "./engine/cordova-crosswalk-engine-c0.6.1"
   ]
 }
