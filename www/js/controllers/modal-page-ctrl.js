@@ -9,7 +9,7 @@ angular.module('grassroots').controller('modalPageCtrl', ['$scope', '$ionicModal
 function modalPageCtrl($scope, $ionicModal) {
 	'use strict';
 
-	$ionicModal.fromTemplateUrl('../views/skip-page.html', {
+	$ionicModal.fromTemplateUrl('/views/skip-page.html', {
 		scope: $scope,
 		animation: 'slide-in-up'
 	}).then(function(modal) {

@@ -19,14 +19,17 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv){
 		} else {
 			console.log("Authenticated successfully with payload;", authData);
 			$scope.user = fireBaseSrv.ref().getAuth();
-		}
-	});
-		function divert() {
 			if($scope.user !== null) {
 				$state.go('observer.national');
 			}
 		}
-		return divert();
+	});
+		// function divert() {
+		// 	if($scope.user !== null) {
+		// 		$state.go('observer.national');
+		// 	}
+		// }
+		// return divert();
 	};
 
 	//Anon login method

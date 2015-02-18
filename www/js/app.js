@@ -72,5 +72,17 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase'])
 
   $urlRouterProvider.otherwise('/launchpage');
 
+})
 
-});
+// .config(function($cordovaInAppBrowserProvider, $ionicPlatform) {
+//
+//     var defaultOptions = {
+//         location: 'no',
+//         clearcache: 'no',
+//         toolbar: 'no'
+//     };
+//
+//     $ionicPlatform.ready(function() {
+//         $cordovaInAppBrowserProvider.setDefaultOptions(options)
+//     }, false);
+// });
