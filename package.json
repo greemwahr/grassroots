@@ -19,6 +19,7 @@
     "https://github.com/apache/cordova-plugin-geolocation.git",
     "org.apache.cordova.network-information",
     "org.apache.cordova.inappbrowser",
-    "./engine/cordova-crosswalk-engine-c0.6.1"
+    "./engine/cordova-crosswalk-engine-c0.6.1",
+    "org.apache.cordova.device"
   ]
 }
