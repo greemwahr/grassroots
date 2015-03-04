@@ -68,15 +68,15 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase'])
     $ionicConfigProvider.platform.android.tabs.position('bottom');
 })
 
-// .config(function($cordovaInAppBrowserProvider, $ionicPlatform) {
-//
-//     var defaultOptions = {
-//         location: 'no',
-//         clearcache: 'no',
-//         toolbar: 'no'
-//     };
-//
-//     $ionicPlatform.ready(function() {
-//         $cordovaInAppBrowserProvider.setDefaultOptions(options)
-//     }, false);
-// });
+.config(function($cordovaInAppBrowserProvider) {
+
+    var defaultOptions = {
+        location: 'no',
+        clearcache: 'yes',
+        toolbar: 'no'
+    };
+
+    document.addEventListener('deviceready', function() {
+        $cordovaInAppBrowserProvider.setDefaultOptions(options);
+    }, false);
+});
