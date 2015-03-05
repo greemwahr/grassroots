@@ -21,6 +21,7 @@
     "./engine/cordova-crosswalk-engine-c0.6.1",
     "org.apache.cordova.device",
     "org.apache.cordova.inappbrowser",
-    "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git"
+    "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
+    "https://github.com/bez4pieci/Phonegap-Cookies-Plugin.git"
   ]
 }

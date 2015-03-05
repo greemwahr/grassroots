@@ -4,9 +4,9 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('grassroots', ['ionic', 'ngCordova', 'firebase'])
+angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $cordovaToast) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -16,6 +16,16 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase'])
     if(window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
+    }
+    if(window.Connection) {
+        if(navigator.connection.type == Connection.NONE) {
+            $cordovaToast.show('Can\'t connect to network. Please re-try', 'long', 'bottom').then(function(success) {
+                console.log("The toast was shown");
+            }, function(error) {
+                console.log("The toast was not shown due to " + error);
+            });
+            // alert("no internet connection");
+        }
     }
   });
 })
@@ -69,7 +79,6 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase'])
 })
 
 .config(function($cordovaInAppBrowserProvider) {
-
     var defaultOptions = {
         location: 'no',
         clearcache: 'yes',
@@ -77,6 +86,19 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase'])
     };
 
     document.addEventListener('deviceready', function() {
-        $cordovaInAppBrowserProvider.setDefaultOptions(options);
+        $cordovaInAppBrowserProvider.setDefaultOptions();
     }, false);
-});
+})
+
+.config(function(ezfbProvider) {
+    var myInitFunction = function ($window, $rootScope, ezfbInitParams) {
+        $window.FB.init({
+            appId: '809400072436533',
+            version: 'v2.1'
+        });
+
+        $rootScope.$broadcast('FB.init');
+    };
+
+    ezfbProvider.setInitFunction(myInitFunction);
+})

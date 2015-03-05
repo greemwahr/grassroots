@@ -4,12 +4,14 @@
 * Controller for logging in with Facebook, Anonymous logon and also logout.
 */
 
-angular.module('grassroots').controller('launchPageCtrl', ['$state', '$scope', '$ionicModal', 'fireBaseSrv', launchPageCtrl]);
+angular.module('grassroots').controller('launchPageCtrl', ['$state', '$scope', '$ionicModal', 'fireBaseSrv', 'ezfb', launchPageCtrl]);
 
-function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv){
+function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb){
 	'use strict';
-	$scope.user = fireBaseSrv.ref().getAuth();
-	$scope.anonuser = fireBaseSrv.ref().authAnonymously;
+	// $scope.user = fireBaseSrv.ref().getAuth();
+	$scope.user = null;
+	// $scope.anonuser = fireBaseSrv.ref().authAnonymously;
+	$scope.anonuser = null;
 
 	//Login method
 	$scope.login = function() {
@@ -24,21 +26,16 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv){
 			}
 		}
 	});
-		// function divert() {
-		// 	if($scope.user !== null) {
-		// 		$state.go('observer.national');
-		// 	}
-		// }
-		// return divert();
 	};
 
-	//Anon login method
+	//Anonymous login method
 	$scope.anon = function() {
 		fireBaseSrv.ref().authAnonymously(function(error, authData) {
 			if(error) {
 				console.log("login Failed!", error);
 			} else {
 				console.log("Authenticated successfully with payload:", authData);
+				$scope.anonuser = fireBaseSrv.ref().authAnonymously;
 				return $scope.anonuser;
 			}
 		});
@@ -51,10 +48,33 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv){
 			return anonvert();
 	};
 
+	//Alternate logout method using facebook JS SDK.
+	$scope.logout = function() {
+		ezfb.logout(function() {
+			updateLoginStatus(updateApiMe);
+		});
+	};
+
+	//Update loginStatus result.
+	function updateLoginStatus(more) {
+		ezfb.getLoginStatus(function(res) {
+			$scope.loginStatus = res;
+
+			(more || angular.noop)();
+		});
+	}
+
+	//Update api ('/me') result
+	function updateApi() {
+		ezfb.api('/me', function(res) {
+			$scope.apiMe = res;
+		});
+	}
 
 	//Logout method
-	$scope.logout = function() {
-		fireBaseSrv.ref().unauth();
-		$state.go('launchpage');
-	};
+	// $scope.logout = function() {
+	// 	fireBaseSrv.ref().unauth();
+	// 	$state.go('launchpage');
+	// 	$scope.user = null;
+	// };
 }
