@@ -1,62 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title></title>
 
-    <style>
-      .angular-google-map-container {
-          width: 100%;
-          height: 504px;
-      }
-    </style>
+        <!-- <style>
+        .angular-google-map-container {
+            width: 100%;
+            height: 504px;
+        }
+        </style> -->
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="js/app.js"></script>
+        <!-- ionic/angularjs js -->
+        <script type="text/javascript" src="lib/ionic/js/ionic.bundle.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
 
-    <!-- ionic/angularjs js services -->
-    <script src="js/services/firebase-srv.js"></script>
-    <script src="js/services/inec-srv.js"></script>
-    <script src="js/services/location-srv.js"></script>
-    <script src="js/services/reverseGeocoder-srv.js"></script>
+        <!-- ionic/angularjs js services -->
+        <script type="text/javascript" src="js/services/firebase-srv.js"></script>
+        <script type="text/javascript" src="js/services/inec-srv.js"></script>
+        <script type="text/javascript" src="js/services/location-srv.js"></script>
+        <script type="text/javascript" src="js/services/reverseGeocoder-srv.js"></script>
 
-    <!-- Facebook JS SDK angular integration using openFB -->
-    <script src="http://pc035860.github.io/angular-easyfb/angular-easyfb.min.js"></script>
+        <!-- SweetAlert for angularjs files -->
+        <link href="lib/sweetalert/lib/sweet-alert.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="lib/sweetalert/lib/sweet-alert.min.js"></script>
+        <script type="text/javascript" src="lib/angular-h-sweetalert/dist/ngSweetAlert.min.js"></script>
 
-    <!-- ionic/angularjs js directives -->
-    <script src="js/directives/location-picker.js"></script>
+        <!-- Facebook JS SDK angular integration using openFB -->
+        <script type="text/javascript" src="http://pc035860.github.io/angular-easyfb/angular-easyfb.min.js"></script>
 
-    <!-- ionic/angularjs js controllers -->
-    <script src="js/controllers/launch-page-ctrl.js"></script>
-    <script src="js/controllers/result-collation-page-ctrl.js"></script>
-    <script src="js/controllers/menu-link-ctrl.js"></script>
-    <script src="js/controllers/modal-page-ctrl.js"></script>
-    <script src="js/controllers/social-share-ctrl.js"></script>
-    <script src="js/controllers/pop-up-ctrl.js"></script>
+        <!-- ionic/angularjs js directives -->
+        <script type="text/javascript" src="js/directives/location-picker.js"></script>
 
-    <!-- ngCordova plugin -->
-    <script src="lib/ng-cordova.min.js"></script>
-    <script src="cordova.js"></script>
+        <!-- ionic/angularjs js controllers -->
+        <script type="text/javascript" src="js/controllers/launch-page-ctrl.js"></script>
+        <script type="text/javascript" src="js/controllers/result-collation-page-ctrl.js"></script>
+        <script type="text/javascript" src="js/controllers/menu-link-ctrl.js"></script>
+        <script type="text/javascript" src="js/controllers/modal-page-ctrl.js"></script>
+        <script type="text/javascript" src="js/controllers/social-share-ctrl.js"></script>
+        <script type="text/javascript" src="js/controllers/pop-up-ctrl.js"></script>
 
-    <!-- firebase installation -->
-    <script src="js/firebase/firebase.js"></script>
-    <script src="js/firebase/angularfire.min.js"></script>
+        <!-- ngCordova plugin -->
+        <script type="text/javascript" src="lib/ng-cordova.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
 
-    <!-- google maps javascript api v3 -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLZmmKrVYHIIFOIwDkz90QXd71ahOW1CQ"></script>
+        <!-- firebase installation -->
+        <script type="text/javascript" src="js/firebase/firebase.js"></script>
+        <script type="text/javascript" src="js/firebase/angularfire.min.js"></script>
 
-    <!-- compiled css output -->
-    <link href="css/ionic.app.css" rel="stylesheet">
+        <!-- google maps javascript api v3 -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLZmmKrVYHIIFOIwDkz90QXd71ahOW1CQ"></script>
 
-  </head>
-  <body ng-app="grassroots" animation="slide-left-right-ios7">
-      <div id="fb-root"></div>
-      <div>
-          <div>
-              <ion-nav-view></ion-nav-view>
-          </div>
-      </div>
-  </body>
+        <!-- compiled css output -->
+        <link href="css/ionic.app.css" type="text/css" rel="stylesheet">
+
+    </head>
+    <body ng-app="grassroots" animation="slide-left-right-ios7">
+        <div id="fb-root"></div>
+        <div>
+            <div>
+                <ion-nav-view></ion-nav-view>
+            </div>
+        </div>
+    </body>
 </html>

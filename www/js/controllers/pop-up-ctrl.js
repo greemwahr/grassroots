@@ -5,30 +5,30 @@
 * Controller for creating pop-ups to allow user confirm their GPS location.
 */
 
-angular.module('grassroots').controller('popUpCtrl', ['$scope', '$ionicPopup', popUpCtrl]);
+angular.module('grassroots').controller('popUpCtrl', ['$scope', 'sweet', popUpCtrl]);
 
-function popUpCtrl($scope, $ionicPopup) {
+function popUpCtrl($scope, sweet) {
 	'use strict';
 
 	// A confirm dialog box to get the GPS location.
 	$scope.showConfirm = function() {
-		var confirmPopup = $ionicPopup.confirm({
+		sweet.show({
 			title: 'Polling Booth location',
-			template: 'Are you at the polling booth where the votes were counted?',
-			cancelText: 'No',
-			cancelType: 'button-dark',
-			okText: 'Yes',
-			okType: 'button-balanced'
-		});
-		confirmPopup.then(function(res) {
-			if(res) {
-				console.log('Yes');
-			} else {
-				$ionicPopup.alert({
-					title: 'Polling booth location',
-					template: 'You have to be at the polling booth to submit the results. This is to ensure accurate result collection.'
-				});
-			}
-		});
-	};
-}
+			text: 'Are you at the polling booth where the votes were counted?',
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#DD6B55',
+			confirmButtonText: 'Yes',
+			cancelButtonText: 'No',
+			closeOnConfirm: false,
+			closeOnCancel: false },
+
+			function(isConfirm) {
+				if(isConfirm) {
+					sweet.show('Polling Booth location', 'Thank you, Please go ahead and submit the collated results.', 'success');
+				} else {
+					sweet.show('Requirement!', 'You have to be at the polling booth to submit the results. This is to ensure accurate result collection.', 'error');
+				}
+			});
+		};
+	}

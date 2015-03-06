@@ -8,10 +8,10 @@ angular.module('grassroots').controller('launchPageCtrl', ['$state', '$scope', '
 
 function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb){
 	'use strict';
-	// $scope.user = fireBaseSrv.ref().getAuth();
-	$scope.user = null;
-	// $scope.anonuser = fireBaseSrv.ref().authAnonymously;
-	$scope.anonuser = null;
+	$scope.user = fireBaseSrv.ref().getAuth();
+	// $scope.user = null;
+	$scope.anonuser = fireBaseSrv.ref().authAnonymously;
+	// $scope.anonuser = null;
 
 	//Login method
 	$scope.login = function() {

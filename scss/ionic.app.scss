@@ -15,13 +15,47 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+// Colors
+// -------------------------------
+
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+// Customized font-type to use. Roboto font-type all in SVG format.
+@font-face {
+	font-family: 'fontsquirrelrobotolight';
+	src:url('../fonts/RobotoCondensed-Light-webfont.svg');
+	src:url('../fonts/RobotoCondensed-Light-webfont.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'fontsquirrelrobotocondensed';
+	src:url('../fonts/RobotoCondensed-Regular-webfont.svg');
+	src:url('../fonts/RobotoCondensed-Regular-webfont.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 // Grassroots app customization sass styles
+p, a, input, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: "fontsquirrelrobotolight", sans-serif;
+}
+
+ion-item.item-divider {
+	font-family: "fontsquirrelrobotocondensed", sans-serif;
+}
+
+.bar .title {
+	font-family: "fontsquirrelrobotocondensed", sans-serif;
+	font-size: 23px;
+}
+
 .pane {
 	background-image: url("../www/assets/img/ggg.jpg");
 	-webkit-background-size: cover;

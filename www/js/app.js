@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb'])
+angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetAlert'])
 
 .run(function($ionicPlatform, $cordovaToast) {
   $ionicPlatform.ready(function() {
@@ -101,4 +101,4 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb'])
     };
 
     ezfbProvider.setInitFunction(myInitFunction);
-})
+});

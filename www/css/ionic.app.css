@@ -7015,6 +7015,30 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+@font-face {
+  font-family: 'fontsquirrelrobotolight';
+  src: url('../fonts/RobotoCondensed-Light-webfont.svg');
+  src: url('../fonts/RobotoCondensed-Light-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'fontsquirrelrobotocondensed';
+  src: url('../fonts/RobotoCondensed-Regular-webfont.svg');
+  src: url('../fonts/RobotoCondensed-Regular-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+p, a, input, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "fontsquirrelrobotolight", sans-serif; }
+
+ion-item.item-divider {
+  font-family: "fontsquirrelrobotocondensed", sans-serif; }
+
+.bar .title {
+  font-family: "fontsquirrelrobotocondensed", sans-serif;
+  font-size: 23px; }
+
 .pane {
   background-image: url("../www/assets/img/ggg.jpg");
   -webkit-background-size: cover;
