@@ -27,6 +27,11 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
             // alert("no internet connection");
         }
     }
+    if(typeof analytics !== "undefined") {
+        analytics.startTrackerWithId("UA-60475110-1");
+    } else {
+        console.log("Google Analytics Unavailable");
+    }
   });
 })
 
