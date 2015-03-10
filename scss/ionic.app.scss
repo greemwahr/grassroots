@@ -17,50 +17,83 @@ $dark:                            #444 !default;
 
 // Colors
 // -------------------------------
-
+$grassred: #951a2e;
+$grassgreen: #072118;
+$energized: #951a2e !default;
+$assertive: #072118 !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/fonts" !default;
+$ionicons-font-path: '../lib/ionic/fonts' !default;
 
 // Include all of Ionic
-@import "www/lib/ionic/scss/ionic";
+@import 'www/lib/ionic/scss/ionic';
 
 // Customized font-type to use. Roboto font-type all in SVG format.
 @font-face {
-	font-family: 'fontsquirrelrobotolight';
-	src:url('../fonts/RobotoCondensed-Light-webfont.svg');
-	src:url('../fonts/RobotoCondensed-Light-webfont.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'fontsquirrelrobotolight';
+  src: url('../fonts/RobotoCondensed-Light-webfont.svg');
+  src: url('../fonts/RobotoCondensed-Light-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'fontsquirrelrobotocondensed';
-	src:url('../fonts/RobotoCondensed-Regular-webfont.svg');
-	src:url('../fonts/RobotoCondensed-Regular-webfont.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'fontsquirrelrobotocondensed';
+  src: url('../fonts/RobotoCondensed-Regular-webfont.svg');
+  src: url('../fonts/RobotoCondensed-Regular-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 // Grassroots app customization sass styles
-p, a, input, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-	font-family: "fontsquirrelrobotolight", sans-serif;
+p,
+a,
+input,
+button,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.item-divider {
+  color: $grassgreen;
+  font-family: "fontsquirrelrobotolight", sans-serif;
+}
+
+.bar.bar-energized .title {
+  color: $grassgreen;
 }
 
 ion-item.item-divider {
-	font-family: "fontsquirrelrobotocondensed", sans-serif;
+  font-family: "fontsquirrelrobotocondensed", sans-serif;
 }
 
 .bar .title {
-	font-family: "fontsquirrelrobotocondensed", sans-serif;
-	font-size: 23px;
+  font-family: "fontsquirrelrobotocondensed", sans-serif;
+  font-size: 23px;
 }
 
-.pane {
-	background-image: url("../www/assets/img/ggg.jpg");
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
+.launchpage {
+  background-image: url('../assets/img/africa-landscape.jpeg');
+  background-size: cover;
+  height: auto;
+  max-width: 100%;
+}
+
+div.bar.bar-footer {
+  background: rgba(255, 255, 255, 0);
+}
+
+.button.button-positive {
+  border-color: #387ef5;
 }
 
 .slider-pager {

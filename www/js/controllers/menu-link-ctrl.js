@@ -5,9 +5,9 @@
 * Also used obtain the current tabs and slide index and in conjunction with JSON file display the view title.
 */
 
-angular.module('grassroots').controller('menuLinkCtrl', ['$scope', '$ionicTabsDelegate', '$ionicSlideBoxDelegate', menuLinkCtrl]);
+angular.module('grassroots').controller('menuLinkCtrl', ['$scope', '$ionicSideMenuDelegate', '$ionicTabsDelegate', '$ionicSlideBoxDelegate', menuLinkCtrl]);
 
-function menuLinkCtrl($scope, $ionicTabsDelegate, $ionicSlideBoxDelegate) {
+function menuLinkCtrl($scope, $ionicSideMenuDelegate, $ionicTabsDelegate, $ionicSlideBoxDelegate) {
 	'use strict';
 
 	$scope.indexSlide = function(index1, index2) {
@@ -34,4 +34,6 @@ function menuLinkCtrl($scope, $ionicTabsDelegate, $ionicSlideBoxDelegate) {
 	$scope.$on("$ionicView.enter",function(){
 		$ionicSlideBoxDelegate.update();
 	});
+
+	$ionicSideMenuDelegate.canDragContent(false);
 }

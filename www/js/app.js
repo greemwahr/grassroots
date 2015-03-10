@@ -52,7 +52,8 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
     .state('observer', {
       abstract: true,
       url: "/observer",
-      templateUrl: "views/observer-menu-page.html"
+      templateUrl: "views/observer-menu-page.html",
+      controller: "menuLinkCtrl"
     })
 
     .state('observer.national', {
