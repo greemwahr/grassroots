@@ -44,5 +44,5 @@ function locationPicker($log, locationSrv, reverseGeocoderSrv) {
           model.$setViewValue(locData);
         };
       }
-    }
+    };
   }

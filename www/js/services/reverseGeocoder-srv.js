@@ -47,4 +47,4 @@ function reverseGeocoderSrv($document, $q) {
     };
 
     return service;
-  };
+  }

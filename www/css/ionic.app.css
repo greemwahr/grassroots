@@ -7624,6 +7624,13 @@ ion-item.item-divider {
   height: auto;
   max-width: 100%; }
 
+.grass-logo {
+  display: block;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px; }
+
 div.bar.bar-footer {
   background: rgba(255, 255, 255, 0); }
 

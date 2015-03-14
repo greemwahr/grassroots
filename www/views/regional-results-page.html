@@ -1,14 +1,15 @@
 <ion-view>
 	<location-picker ng-model="pickLocation" limit-to="1"></location-picker>
-	<ion-content ng-controller="resultCollationCtrl">
+	<ion-content ng-controller="collationCtrl">
 		<ion-slide-box>
+			<ion-slide-pager><ion-slide-pager>
 			<ion-slide>
 				<div class="list">
 					<a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
 						<img ng-src="{{partyAbbr.avatar}}">
 						<label class="item item-input item-floating-label">
 							<span class="input-label">{{partyAbbr.abbr}}</span>
-							<input type="text" placeholder="{{partyAbbr.abbr}}">
+							<input ng-model="data" type="text" placeholder="{{partyAbbr.abbr}}">
 						</label>
 					</a>
 				</div>
@@ -24,7 +25,7 @@
 						<img ng-src="{{partyAbbr.avatar}}">
 						<label class="item item-input item-floating-label">
 							<span class="input-label">{{partyAbbr.abbr}}</span>
-							<input type="text" placeholder="{{partyAbbr.abbr}}">
+							<input ng-model="data" type="text" placeholder="{{partyAbbr.abbr}}">
 						</label>
 					</a>
 				</div>
