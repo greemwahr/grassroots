@@ -18,9 +18,8 @@ $dark:                            #444 !default;
 // Colors
 // -------------------------------
 $grassred: #951a2e;
+$grassmaroon: #b83250;
 $grassgreen: #072118;
-$energized: #951a2e !default;
-$assertive: #072118 !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: '../lib/ionic/fonts' !default;
@@ -68,11 +67,12 @@ h6,
   font-family: "fontsquirrelrobotolight", sans-serif;
 }
 
-.bar.bar-energized .title {
-  color: $grassgreen;
+.bar.bar-dark .title {
+  color: $light;
 }
 
 ion-item.item-divider {
+  color: $light;
   font-family: "fontsquirrelrobotocondensed", sans-serif;
 }
 

@@ -1,14 +1,29 @@
 <ion-view view-title="{{navTitle.name}}">
 	<ion-content ng-controller="collationCtrl">
-		<ion-slide-box on-slide-changed="currInd()">
-			<ion-slide-pager></ion-slide-pager>
+		<ion-slide-box show-pager="true" on-slide-changed="currInd()">
 			<ion-slide>
 				<div class="list">
 					<a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
 						<img ng-src="{{partyAbbr.avatar}}">
 						<label class="item item-input item-floating-label">
 							<span class="input-label">{{partyAbbr.abbr}}</span>
-							<input ng-model="data" type="number" placeholder="{{partyAbbr.abbr}}">
+							<input ng-model="partyAbbr[$index].fullname" type="number" placeholder="{{partyAbbr.abbr}}">
+						</label>
+					</a>
+				</div>
+
+				<div style="text-align: center" ng-controller="dataSyncCtrl">
+					<button class="button icon-right ion-ios-location-outline button-assertive" ng-click="presidentialResult()">Submit</button>
+				</div>
+			</ion-slide>
+
+			<ion-slide>
+				<div class="list">
+					<a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
+						<img ng-src="{{partyAbbr.avatar}}">
+						<label class="item item-input item-floating-label">
+							<span class="input-label">{{partyAbbr.abbr}}</span>
+							<input ng-model="partyAbbr[$index].fullname" type="number" placeholder="{{partyAbbr.abbr}}">
 						</label>
 					</a>
 				</div>
@@ -24,23 +39,7 @@
 						<img ng-src="{{partyAbbr.avatar}}">
 						<label class="item item-input item-floating-label">
 							<span class="input-label">{{partyAbbr.abbr}}</span>
-							<input ng-model="data" type="number" placeholder="{{partyAbbr.abbr}}">
-						</label>
-					</a>
-				</div>
-
-				<div style="text-align: center">
-					<button class="button icon-right ion-ios7-location-outline button-assertive" ng-click="showConfirm()">Submit</button>
-				</div>
-			</ion-slide>
-
-			<ion-slide>
-				<div class="list">
-					<a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
-						<img ng-src="{{partyAbbr.avatar}}">
-						<label class="item item-input item-floating-label">
-							<span class="input-label">{{partyAbbr.abbr}}</span>
-							<input ng-model="data" type="number" placeholder="{{partyAbbr.abbr}}">
+							<input ng-model="partyAbbr[$index].fullname" type="number" placeholder="{{partyAbbr.abbr}}">
 						</label>
 					</a>
 				</div>
