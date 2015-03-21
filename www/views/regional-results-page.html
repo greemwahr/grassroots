@@ -1,19 +1,19 @@
 <ion-view>
 	<ion-content ng-controller="collationCtrl">
-		<ion-slide-box show-pager="true">
+		<ion-slide-box on-slide-changed="slideChanged(index)">
 			<ion-slide>
 				<div class="list">
 					<a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
 						<img ng-src="{{partyAbbr.avatar}}">
 						<label class="item item-input item-floating-label">
 							<span class="input-label">{{partyAbbr.abbr}}</span>
-							<input ng-model="data" type="text" placeholder="{{partyAbbr.abbr}}">
+							<input ng-model="data" type="number" placeholder="{{partyAbbr.abbr}}">
 						</label>
 					</a>
 				</div>
 
 				<div style="text-align: center">
-					<button class="button icon-right ion-ios7-location-outline button-assertive" >Submit</button>
+					<button class="button icon-right ion-compass button-assertive" >Submit</button>
 				</div>
 			</ion-slide>
 
@@ -23,13 +23,13 @@
 						<img ng-src="{{partyAbbr.avatar}}">
 						<label class="item item-input item-floating-label">
 							<span class="input-label">{{partyAbbr.abbr}}</span>
-							<input ng-model="data" type="text" placeholder="{{partyAbbr.abbr}}">
+							<input ng-model="data" type="number" placeholder="{{partyAbbr.abbr}}">
 						</label>
 					</a>
 				</div>
 
 				<div style="text-align: center">
-					<button class="button icon-right ion-ios7-location-outline button-assertive" >Submit</button>
+					<button class="button icon-right ion-compass button-assertive" >Submit</button>
 				</div>
 			</ion-slide>
 		</ion-slide-box>

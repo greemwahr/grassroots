@@ -1,20 +1,29 @@
 <ion-side-menus>
     <ion-pane ion-side-menu-content drag-content="false">
-        <ion-nav-bar class="bar-energized">
-            <ion-nav-buttons side="left">
-                <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-            </ion-nav-buttons>
-        </ion-nav-bar>
+        <div ng-controller="sliderCtrl">
+            <!-- Custom slider below main title -->
+            <div class="custom-slider-pager">
+                <span class="custom-slider-pager-page" ng-repeat="i in getCount(pager.total) track by $index" ng-class="{active: pager.current == $index}">
+                <i class="icon ion-record"></i>
+                </span>
+            </div>
 
-        <ion-tabs class="tabs-striped tabs-color-energized tabs-icon-top">
-            <ion-tab title="National" icon="ion-ribbon-a" ui-sref="observer.national">
-                <ion-nav-view name="national"></ion-nav-view>
-            </ion-tab>
+            <ion-nav-bar class="bar-energized">
+                <ion-nav-buttons side="left">
+                    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+                </ion-nav-buttons>
+            </ion-nav-bar>
 
-            <ion-tab title="Regional" icon="ion-ribbon-b" ui-sref="observer.regional">
-                <ion-nav-view name="regional"></ion-nav-view>
-            </ion-tab>
-        </ion-tabs>
+            <ion-tabs class="tabs-striped tabs-color-energized tabs-icon-top">
+                <ion-tab title="National" icon="ion-ribbon-a" ui-sref="observer.national">
+                    <ion-nav-view name="national"></ion-nav-view>
+                </ion-tab>
+
+                <ion-tab title="Regional" icon="ion-ribbon-b" ui-sref="observer.regional">
+                    <ion-nav-view name="regional"></ion-nav-view>
+                </ion-tab>
+            </ion-tabs>
+        </div>
     </ion-pane>
 
     <ion-side-menu side="left">

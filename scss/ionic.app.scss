@@ -17,9 +17,13 @@ $dark:                            #444 !default;
 
 // Colors
 // -------------------------------
-$grassred: #951a2e;
-$grassmaroon: #b83250;
-$grassgreen: #072118;
+$grassred1: #951a2e;
+$grassred2: #b83250;
+$grassgreen1: #072118;
+$grassgreen2: #0d3824;
+$grassgreen3: #214421;
+$grassgreen4: #2c7339;
+$grassgreen5: #3ba567;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: '../lib/ionic/fonts' !default;
@@ -63,7 +67,7 @@ h6,
 .h5,
 .h6,
 .item-divider {
-  color: $grassgreen;
+  color: $grassgreen1;
   font-family: "fontsquirrelrobotolight", sans-serif;
 }
 
@@ -101,9 +105,40 @@ div.bar.bar-footer {
 }
 
 .button.button-positive {
-  border-color: #387ef5;
+  border-color: $positive;
 }
 
+.custom-slider-pager {
+  height: 10px;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 25px;
+  width: 100%;
+  z-index: 100;
+}
+
+.custom-slider-pager .custom-slider-pager-page {
+  color: #000;
+  display: inline-block;
+  margin: 0px 3px;
+  opacity: .3;
+  text-decoration: none;
+  width: 5px;
+}
+
+.custom-slider-pager .custom-slider-pager-page.active {
+  opacity: 1;
+  -webkit-transition: opacity .4s ease-in;
+  transition: opacity .4s ease-in;
+
+}
+
+.custom-slider-pager .icon {
+  font-size: 8px;
+}
+
+/*
 .slider-pager {
   position: absolute;
   top: -2px;
@@ -121,3 +156,4 @@ div.bar.bar-footer {
       -webkit-transition: opacity 0.4s ease-in;
       transition: opacity 0.4s ease-in;
       opacity: 0.6; }
+*/

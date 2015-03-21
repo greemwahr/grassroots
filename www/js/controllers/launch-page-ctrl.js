@@ -50,26 +50,12 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb){
 
 	//Alternate logout method using facebook JS SDK.
 	$scope.logout = function() {
-		ezfb.logout(function() {
-			updateLoginStatus(updateApiMe);
+		ezfb.getLoginStatus(function (response) {
+			if (response && response.status === 'connected') {
+				ezfb.logout();
+			}
 		});
 	};
-
-	//Update loginStatus result.
-	function updateLoginStatus(more) {
-		ezfb.getLoginStatus(function(res) {
-			$scope.loginStatus = res;
-
-			(more || angular.noop)();
-		});
-	}
-
-	//Update api ('/me') result
-	function updateApi() {
-		ezfb.api('/me', function(res) {
-			$scope.apiMe = res;
-		});
-	}
 
 	//Logout method
 	// $scope.logout = function() {
