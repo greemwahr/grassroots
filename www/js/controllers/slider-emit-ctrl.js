@@ -25,7 +25,7 @@ function sliderEmitCtrl($rootScope, $state, $ionicSlideBoxDelegate) {
         });
     };
 
-    // Called each time the slide changes
+    // Called each time the slide changes on National tab.
     $rootScope.slideChanged = function (index) {
         $rootScope.data.slideIndex = index;
 
@@ -43,4 +43,20 @@ function sliderEmitCtrl($rootScope, $state, $ionicSlideBoxDelegate) {
         emitSlideBoxChanged();
     };
     $rootScope.slideChanged(0);
+
+    //Called each time the slide changes on the Regional tab.
+    $rootScope.slideChangedii = function (index) {
+        $rootScope.data.slideIndex = index;
+
+        if (index === 0) {
+            $rootScope.data.currentViewTitle = "Gubernatorial";
+
+        } else {
+            $rootScope.data.currentViewTitle = "State Legislator";
+
+        }
+
+        emitSlideBoxChanged();
+    };
+    $rootScope.slideChangedii(0);
 }
