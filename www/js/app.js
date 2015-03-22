@@ -55,10 +55,15 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
     // Each state's controller can be found in controllers.js
     $stateProvider
 
-        .state('launchpage', {
+    .state('launchpage', {
         url: "/launchpage",
         templateUrl: "views/launch-page.html",
         controller: "launchPageCtrl"
+    })
+
+    .state('tandc', {
+        url: "/terms&conditions",
+        templateUrl: "views/tandc-page.html"
     })
 
     .state('observer', {
@@ -82,6 +87,15 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
         views: {
             'regional': {
                 templateUrl: "views/regional-results-page.html"
+            }
+        }
+    })
+
+    .state('observer.record', {
+        url: "/record",
+        views: {
+            'record': {
+                templateUrl: "views/recorded-results-page.html"
             }
         }
     });

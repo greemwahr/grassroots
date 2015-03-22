@@ -15,7 +15,8 @@ function sliderEmitCtrl($rootScope, $state, $ionicSlideBoxDelegate) {
     $rootScope.data = {
         numViewableSlides: 0,
         slideIndex: 0,
-        currentViewTitle: ""
+        currentViewTitle: "",
+        currentViewTitleii: ""
     };
 
     var emitSlideBoxChanged = function () {
@@ -49,10 +50,10 @@ function sliderEmitCtrl($rootScope, $state, $ionicSlideBoxDelegate) {
         $rootScope.data.slideIndex = index;
 
         if (index === 0) {
-            $rootScope.data.currentViewTitle = "Gubernatorial";
+            $rootScope.data.currentViewTitleii = "Gubernatorial";
 
         } else {
-            $rootScope.data.currentViewTitle = "State Legislator";
+            $rootScope.data.currentViewTitleii = "State Legislator";
 
         }
 

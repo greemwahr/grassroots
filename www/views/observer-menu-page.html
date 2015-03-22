@@ -22,6 +22,10 @@
                 <ion-tab title="Regional" icon="ion-ribbon-b" ui-sref="observer.regional">
                     <ion-nav-view name="regional"></ion-nav-view>
                 </ion-tab>
+
+                <ion-tab title="Record" icon="ion-ios-copy" ui-sref="observer.record">
+                    <ion-nav-view name="record"></ion-nav-view>
+                </ion-tab>
             </ion-tabs>
         </div>
     </ion-pane>
@@ -44,7 +48,7 @@
                     <ion-item nav-clear menu-close ng-controller="socialShareCtrl"><a class="item-icon-right" ng-click="shareAnywhere()"><i class="icon ion-share"></i>Share</a></ion-item>
                     <ion-item nav-clear menu-close ng-controller="launchPageCtrl"><a class="item-icon-right" ng-click="logout()"><i class="icon ion-log-out"></i>Logout</a></ion-item>
                 <ion-item class="item-divider">ABOUT</ion-item>
-                    <ion-item nav-clear menu-close><a class="item-icon-right"><i class="icon ion-clipboard"></i>Terms &amp; Conditions</a></ion-item>
+                    <ion-item nav-clear menu-close ng-controller="modalPageCtrl"><a class="item-icon-right" ng-click="openModal()"><i class="icon ion-clipboard" ng-click="openModal()"></i>Terms &amp; Conditions</a></ion-item>
                     <ion-item nav-clear menu-close><a class="item-icon-right"><i class="icon ion-card"></i>Donate</a></ion-item>
             </ion-list>
     </ion-side-menu>

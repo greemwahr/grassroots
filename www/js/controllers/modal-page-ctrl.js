@@ -16,6 +16,12 @@ function modalPageCtrl($scope, $ionicModal) {
 		$scope.modal = modal;
 	});
 
+	$scope.downModal = function() {
+		if ($scope.modal.isShown() === true) {
+			$scope.modal.hide();
+		}
+	};
+
 	$scope.openModal = function() {
 		$scope.modal.show();
 	};
