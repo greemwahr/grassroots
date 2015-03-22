@@ -25,11 +25,9 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
 
             function (isConfirm) {
                 if (isConfirm) {
-                    // sweet.show('Polling Booth location', 'Thank you, Please go ahead and submit the collated results.', 'success');
-
                     sweet.show({
                         title: 'Polling Booth location',
-                        text: 'Thank you, Please go ahead and submit the collated results.',
+                        text: 'Thank you, Tap OK and your collated results will be submitted.',
                         type: 'success',
                         showCancelButton: true
                     }, function (isOk) {
@@ -59,10 +57,9 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
                             };
 
                             $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
-                                // navigator.geolocation.getCurrentPosition(function (position) {
                                 var lat = position.coords.latitude;
                                 var long = position.coords.longitude;
-                                alert("Lat is :" + lat + " & Long is :" + long);
+                                //alert("Lat is :" + lat + " & Long is :" + long);
 
                                 var geoPosition = {
                                     lattitude: lat,
@@ -71,7 +68,7 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
                                 // Call my SubmitResults Service
                                 ResultsService.submitResults(tabName, slideName, uid, completeResults, geoPosition, function (status) {
                                     if (status) {
-                                        console.log("Data Submission Successful");
+                                        //console.log("Data Submission Successful");
                                         resetResults($scope.partyAbbr, slideName);
                                     } else {
                                         alert("Error Occurred");
@@ -84,10 +81,10 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
                             });
 
 
-                            alert('OK is clicked');
-                        } else {
-                            alert('Cancel is clicked');
-                        }
+                        //alert('OK is clicked');
+                    } //else {
+                            //alert('Cancel is clicked');
+                        //}
                     });
                 } else {
                     sweet.show('Requirement!', 'You have to be at the polling booth to submit the results. This is to ensure accurate result collection.', 'error');

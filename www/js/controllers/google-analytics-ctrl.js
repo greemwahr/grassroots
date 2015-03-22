@@ -14,5 +14,5 @@ function googleAnalyticsCtrl($scope) {
 
     $scope.initEvent = function() {
         if(typeof analytics !== "undefined") {analytics.trackEvent("Category", "Action", "Label", 25);}
-    }
+    };
 }

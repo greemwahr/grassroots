@@ -14,24 +14,17 @@ function modalPageCtrl($scope, $ionicModal) {
         'terms': 'views/tandc-page.html'
     };
 
-
-    $scope.downModal = function () {
-        if ($scope.modal.isShown() === true) {
-            $scope.modal.hide();
-        }
-    };
-
     $scope.openModal = function (pageName) {
-        console.log(pageName);
-        console.log(modalTemplates);
+        //console.log(pageName);
+        //console.log(modalTemplates);
         var templateUrl = modalTemplates[pageName];
-        console.log(templateUrl);
+        //console.log(templateUrl);
 
         $ionicModal.fromTemplateUrl(templateUrl, {
             scope: $scope,
             animation: 'slide-in-up'
         }).then(function (modal) {
-            console.log('modal created');
+            //console.log('modal created');
             $scope.modal = modal;
             $scope.modal.show();
         });

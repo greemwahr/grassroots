@@ -35,7 +35,7 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
 
         $rootScope.loggedInUserID = "";
         var authData = Auth.$getAuth();
-        console.log(authData);
+        //console.log(authData);
         if (authData) {
             $rootScope.loggedInUserID = authData.uid;
 
