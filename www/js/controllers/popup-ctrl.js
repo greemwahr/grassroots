@@ -26,6 +26,18 @@ function popUpCtrl($scope, sweet) {
 			function(isConfirm) {
 				if(isConfirm) {
 					sweet.show('Polling Booth location', 'Thank you, Please go ahead and submit the collated results.', 'success');
+					sweet.show({
+				        title: 'Confirm',
+					        text: 'Delete this file?',
+					        type: 'warning',
+					        showCancelButton: true
+					    }, function(isOk) {
+					        if (isOk) {
+					            alert('OK is clicked');
+					        } else {
+					            alert('Cancel is clicked');
+					        }
+					    });
 				} else {
 					sweet.show('Requirement!', 'You have to be at the polling booth to submit the results. This is to ensure accurate result collection.', 'error');
 				}
