@@ -50,7 +50,8 @@ angular.module('grassroots').factory("ResultsService", ["$firebase",
         return {
             submitResults: function (tabName, slideName, uid, results, geoPosition, callback) {
                 var userObj = $firebase(ref.child('election').child(tabName).child(slideName).child(uid)).$asObject();
-                //userObj.submitAt = new Date();
+                userObj.submitAt = moment().format('MMMM Do YYYY, h:mm:ss a');
+                console.log(userObj.submitAt);
                 userObj.results = results;
                 userObj.location = geoPosition;
 

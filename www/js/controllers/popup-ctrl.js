@@ -1,8 +1,8 @@
 /* popUpCtrl
-*
-*
-* Controller for creating pop-ups to allow user confirm their GPS location.
-*/
+ *
+ *
+ * Controller for creating pop-ups to allow user confirm their GPS location.
+ */
 
 angular.module('grassroots').controller('popUpCtrl', ['$scope', 'sweet', '$location', '$rootScope', 'ResultsService', '$cordovaGeolocation', popUpCtrl]);
 
@@ -44,7 +44,7 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
                             slideName = slideName.toLowerCase();
 
                             // Processing Results to Store in Firebase
-                            var completeResults = processResultsArray($scope.partyAbbr);
+                            var completeResults = processResultsArray($scope.partyAbbr, slideName);
 
 
                             //UID
@@ -72,7 +72,7 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
                                 ResultsService.submitResults(tabName, slideName, uid, completeResults, geoPosition, function (status) {
                                     if (status) {
                                         console.log("Data Submission Successful");
-                                        // resetResults($scope.partyAbbr);
+                                        resetResults($scope.partyAbbr, slideName);
                                     } else {
                                         alert("Error Occurred");
                                     }
@@ -96,22 +96,25 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
     };
 
 
-    function processResultsArray(partyAbbr) {
+    function processResultsArray(partyAbbr, slideName) {
+        // console.log(partyAbbr);
         var dataArr = [];
         for (var i = 0; i < partyAbbr.length; i++) {
+
             dataArr.push({
                 fullname: partyAbbr[i].fullname,
                 abbr: partyAbbr[i].abbr,
-                results: partyAbbr[i][i] ? partyAbbr[i][i].results : ""
+                results: partyAbbr[i].results ? partyAbbr[i].results[slideName] ? partyAbbr[i].results[slideName] : "" : ""
             });
         }
+        // console.log(dataArr);
         return dataArr;
     }
 
-    function resetResults(partyAbbr) {
+    function resetResults(partyAbbr, slideName) {
         for (var i = 0; i < partyAbbr.length; i++) {
-            if (partyAbbr[i][i]) {
-                partyAbbr[i][i].results = null;
+            if (partyAbbr[i].results && partyAbbr[i].results[slideName]) {
+                partyAbbr[i].results[slideName] = "";
             }
         }
     }

@@ -55,7 +55,7 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
     // Each state's controller can be found in controllers.js
     $stateProvider
 
-    .state('launchpage', {
+        .state('launchpage', {
         url: "/launchpage",
         templateUrl: "views/launch-page.html",
         controller: "launchPageCtrl"
@@ -70,7 +70,17 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
         abstract: true,
         url: "/observer",
         templateUrl: "views/observer-menu-page.html",
-        controller: "menuLinkCtrl"
+        controller: "menuLinkCtrl",
+        resolve: {
+            // controller will not be loaded until $requireAuth resolves
+            // Auth refers to our $firebaseAuth wrapper in the example above
+            "currentAuth": ["Auth",
+                    function (Auth) {
+                    // $requireAuth returns a promise so the resolve waits for it to complete
+                    // If the promise is rejected, it will throw a $stateChangeError (see above)
+                    return Auth.$requireAuth();
+          }]
+        }
     })
 
     .state('observer.national', {

@@ -38,34 +38,49 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb, $rootSco
                 console.log("login Failed!", error);
             } else {
                 console.log("Authenticated successfully with payload:", authData);
-
+                $rootScope.loggedInUserID = authData.uid;
                 $scope.anonuser = fireBaseSrv.ref().authAnonymously;
-                return $scope.anonuser;
+
+                if ($scope.anonuser !== null) {
+                    $state.go('observer.national');
+                    $scope.modal.hide();
+                }
+
+                //return $scope.anonuser;
             }
         });
 
-        function anonvert() {
+        /*function anonvert() {
             if ($scope.anonuser !== null) {
                 $state.go('observer.national');
                 $scope.modal.hide();
             }
         }
-        return anonvert();
+        return anonvert();*/
     };
 
     //Alternate logout method using facebook JS SDK.
-    $scope.logout = function () {
+    /*$scope.logout = function () {
         ezfb.getLoginStatus(function (response) {
             if (response && response.status === 'connected') {
                 ezfb.logout();
             }
         });
-    };
+    };*/
 
     //Logout method
-    // $scope.logout = function() {
-    // 	fireBaseSrv.ref().unauth();
-    // 	$state.go('launchpage');
-    // 	$scope.user = null;
-    // };
+    $scope.logout = function () {
+        console.log('logout');
+        ezfb.getLoginStatus(function (response) {
+            console.log(response);
+            if (response && response.status === 'connected') {
+                console.log('logging out of facebook');
+                ezfb.logout();
+                fireBaseSrv.ref().unauth();
+                $state.go('launchpage');
+                $rootScope.loggedInUserID = "";
+                $scope.user = null;
+            }
+        });
+    };
 }
