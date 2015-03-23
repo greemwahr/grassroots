@@ -21,9 +21,12 @@ $grassred1: #951a2e;
 $grassred2: #b83250;
 $grassgreen1: #072118;
 $grassgreen2: #0d3824;
-$grassgreen3: #214421;
-$grassgreen4: #2c7339;
-$grassgreen5: #3ba567;
+$assertive: #db162f;
+$royal: #7f9c96;
+$letters: #020202;
+$tabinactive: #0d324d;
+$navlight: #f4f7f5;
+$headers: #0d324d;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: '../lib/ionic/fonts' !default;
@@ -67,22 +70,42 @@ h6,
 .h5,
 .h6,
 .item-divider {
-  color: $grassgreen1;
+  color: $letters;
   font-family: "fontsquirrelrobotolight", sans-serif;
 }
 
-.bar.bar-dark .title {
-  color: $light;
+.tab-item {
+  font-family: "fontsquirrelrobotolight", sans-serif;
+}
+
+.col h4 {
+  color: $stable;
+}
+
+.bar.bar-footer .button.button-clear h4 {
+  color: $stable;
+}
+
+.bar-royal .button.button-icon {
+  color: $navlight;
+}
+
+.bar.bar-royal .title {
+  color: $navlight;
+}
+
+.tabs-striped.tabs-color-royal .tab-item {
+  color: $tabinactive;
 }
 
 ion-item.item-divider {
-  color: $light;
+  color: $headers;
   font-family: "fontsquirrelrobotocondensed", sans-serif;
 }
 
 .bar .title {
   font-family: "fontsquirrelrobotocondensed", sans-serif;
-  font-size: 23px;
+  font-size: 19px;
 }
 
 .launchpage {
@@ -106,6 +129,10 @@ div.bar.bar-footer {
 
 .button.button-positive {
   border-color: $positive;
+}
+
+.button.button-assertive {
+  border-color: $assertive;
 }
 
 .custom-slider-pager {
