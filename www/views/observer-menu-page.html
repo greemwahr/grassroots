@@ -3,7 +3,7 @@
         <div ng-controller="sliderCtrl">
             <!-- Custom slider below main title -->
             <div class="custom-slider-pager">
-                <span class="custom-slider-pager-page" ng-repeat="i in getCount(pager.total) track by $index" ng-class="{active: pager.current == $index}">
+                <span class="custom-slider-pager-page" ng-repeat="i in getCount(pager.total) track by $index" ng-class="{active: pager.current === $index}">
                 <i class="icon ion-record"></i>
                 </span>
             </div>

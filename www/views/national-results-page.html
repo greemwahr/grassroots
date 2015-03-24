@@ -1,7 +1,7 @@
 <ion-view view-title="{{data.currentViewTitle}}">
-    <ion-content ng-controller="collationCtrl">
+    <ion-content class="transparent" ng-controller="collationCtrl">
         <div ng-controller="sliderEmitCtrl">
-            <ion-slide-box on-slide-changed="slideChanged(index)">
+            <ion-slide-box on-slide-changed="slideChanged(index)" ng-init="data.slides=3">
                 <ion-slide>
                     <div class="list">
                         <a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
@@ -17,6 +17,8 @@
                     <div ng-controller="popUpCtrl" style="text-align: center">
                         <button class="button icon-right ion-compass button-assertive" ng-click="showConfirm()">Submit</button>
                     </div>
+
+                    <div class="spacer" style="width: 300px; height: 54px;"></div>
                 </ion-slide>
 
                 <ion-slide>
@@ -32,8 +34,10 @@
                     </div>
 
                     <div ng-controller="popUpCtrl" style="text-align: center">
-                        <button class="button icon-right ion-compass" ng-click="showConfirm()">Submit</button>
+                        <button class="button icon-right ion-compass button-assertive" ng-click="showConfirm()">Submit</button>
                     </div>
+
+                    <div class="spacer" style="width: 300px; height: 54px;"></div>
                 </ion-slide>
 
                 <ion-slide>
@@ -49,8 +53,10 @@
                     </div>
 
                     <div ng-controller="popUpCtrl" style="text-align: center">
-                        <button class="button icon-right ion-compass" ng-click="showConfirm()">Submit</button>
+                        <button class="button icon-right ion-compass button-assertive" ng-click="showConfirm()">Submit</button>
                     </div>
+
+                    <div class="spacer" style="width: 300px; height: 54px;"></div>
                 </ion-slide>
             </ion-slide-box>
         </div>

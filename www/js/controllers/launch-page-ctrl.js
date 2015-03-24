@@ -21,7 +21,7 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb, $rootSco
             } else {
                 console.log("Authenticated successfully with payload;", authData);
                 $rootScope.loggedInUserID = authData.uid;
-                console.log($rootScope.loggedInUserID);
+                //console.log($rootScope.loggedInUserID);
                 $scope.user = fireBaseSrv.ref().getAuth();
 
                 if ($scope.user !== null) {
@@ -71,15 +71,15 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb, $rootSco
     //Logout method
     $scope.logout = function () {
         console.log('logout');
+        fireBaseSrv.ref().unauth();
+        $state.go('launchpage');
+        $rootScope.loggedInUserID = "";
+        $scope.user = null;
         ezfb.getLoginStatus(function (response) {
-            console.log(response);
+            // console.log(response);
             if (response && response.status === 'connected') {
-                console.log('logging out of facebook');
+                // console.log('logging out of facebook');
                 ezfb.logout();
-                fireBaseSrv.ref().unauth();
-                $state.go('launchpage');
-                $rootScope.loggedInUserID = "";
-                $scope.user = null;
             }
         });
     };
