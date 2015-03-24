@@ -23,6 +23,7 @@
     "org.apache.cordova.inappbrowser",
     "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
     "https://github.com/bez4pieci/Phonegap-Cookies-Plugin.git",
-    "https://github.com/danwilson/google-analytics-plugin.git"
+    "https://github.com/danwilson/google-analytics-plugin.git",
+    "https://github.com/apache/cordova-plugin-splashscreen.git"
   ]
 }

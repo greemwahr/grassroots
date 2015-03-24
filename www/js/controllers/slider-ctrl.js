@@ -17,10 +17,10 @@ function sliderCtrl($rootScope, $scope) {
         current: 0
     };
 
-    $rootScope.$on('slidebox.slidechanged', function(e, obj) {
-        console.log(obj);
+    $scope.$on('slidebox.slidechanged', function(e, obj) {
         //$scope.pager.total = obj.numberOfSlides;
         $scope.pager.current = obj.currentIndex;
+        console.log($scope.pager.current);
     });
 
     $scope.getCount = function(num) {

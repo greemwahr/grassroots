@@ -18,7 +18,7 @@ function socialShareCtrl($scope, $cordovaSocialSharing) {
 		$cordovaSocialSharing.canShareVia("facebook", message, pollbooth).then(function(result) {
 			$cordovaSocialSharing.shareViaFacebook(message, pollbooth);
 		}, function(error) {
-			alert("Cannot share on Facebook");
+			alert("Cannot share on Facebook. You have to be logged in with Facebook.");
 		});
 	};
 }

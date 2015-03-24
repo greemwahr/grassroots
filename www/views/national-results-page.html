@@ -1,7 +1,7 @@
 <ion-view view-title="{{data.currentViewTitle}}">
     <ion-content class="transparent" ng-controller="collationCtrl">
         <div ng-controller="sliderEmitCtrl">
-            <ion-slide-box on-slide-changed="slideChanged(index)" ng-init="data.slides=3">
+            <ion-slide-box on-slide-changed="slideChanged(index)">
                 <ion-slide>
                     <div class="list">
                         <a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">
