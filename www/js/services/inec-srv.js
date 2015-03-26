@@ -1,6 +1,8 @@
 /**
 * Inec Political Parties Service Provider
 *
+*
+*
 * This script parses a hard-coded JSON data and returns it as a Javascript data.
 */
 

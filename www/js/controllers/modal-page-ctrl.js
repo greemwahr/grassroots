@@ -15,16 +15,12 @@ function modalPageCtrl($scope, $ionicModal) {
     };
 
     $scope.openModal = function (pageName) {
-        //console.log(pageName);
-        //console.log(modalTemplates);
         var templateUrl = modalTemplates[pageName];
-        //console.log(templateUrl);
 
         $ionicModal.fromTemplateUrl(templateUrl, {
             scope: $scope,
             animation: 'slide-in-up'
         }).then(function (modal) {
-            //console.log('modal created');
             $scope.modal = modal;
             $scope.modal.show();
         });

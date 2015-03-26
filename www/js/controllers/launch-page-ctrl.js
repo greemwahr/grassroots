@@ -4,27 +4,27 @@
  * Controller for logging in with Facebook, Anonymous logon and also logout.
  */
 
-angular.module('grassroots').controller('launchPageCtrl', ['$state', '$scope', '$ionicModal', 'fireBaseSrv', 'ezfb', '$rootScope', launchPageCtrl]);
+angular.module('grassroots').controller('launchPageCtrl', ['$state', '$scope', '$ionicModal', 'fireBaseSrv', 'ezfb', '$rootScope', 'loaderSrv', launchPageCtrl]);
 
-function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb, $rootScope) {
+function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb, $rootScope, loaderSrv) {
     'use strict';
     $scope.user = fireBaseSrv.ref().getAuth();
-    // $scope.user = null;
     $scope.anonuser = fireBaseSrv.ref().authAnonymously;
-    // $scope.anonuser = null;
 
     //Login method
     $scope.login = function () {
+        loaderSrv.show();
+
         fireBaseSrv.ref().authWithOAuthPopup("facebook", function (error, authData) {
             if (error) {
                 console.log("Login Failed", error);
             } else {
                 console.log("Authenticated successfully with payload;", authData);
                 $rootScope.loggedInUserID = authData.uid;
-                //console.log($rootScope.loggedInUserID);
                 $scope.user = fireBaseSrv.ref().getAuth();
 
                 if ($scope.user !== null) {
+                    loaderSrv.hide();
                     $state.go('observer.national');
                 }
             }
@@ -33,6 +33,8 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb, $rootSco
 
     //Anonymous login method
     $scope.anon = function () {
+        loaderSrv.show();
+
         fireBaseSrv.ref().authAnonymously(function (error, authData) {
             if (error) {
                 console.log("login Failed!", error);
@@ -42,31 +44,13 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb, $rootSco
                 $scope.anonuser = fireBaseSrv.ref().authAnonymously;
 
                 if ($scope.anonuser !== null) {
+                    loaderSrv.hide();
                     $state.go('observer.national');
                     $scope.modal.hide();
                 }
-
-                //return $scope.anonuser;
             }
         });
-
-        /*function anonvert() {
-            if ($scope.anonuser !== null) {
-                $state.go('observer.national');
-                $scope.modal.hide();
-            }
-        }
-        return anonvert();*/
     };
-
-    //Alternate logout method using facebook JS SDK.
-    /*$scope.logout = function () {
-        ezfb.getLoginStatus(function (response) {
-            if (response && response.status === 'connected') {
-                ezfb.logout();
-            }
-        });
-    };*/
 
     //Logout method
     $scope.logout = function () {
@@ -76,9 +60,7 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb, $rootSco
         $rootScope.loggedInUserID = "";
         $scope.user = null;
         ezfb.getLoginStatus(function (response) {
-            // console.log(response);
             if (response && response.status === 'connected') {
-                // console.log('logging out of facebook');
                 ezfb.logout();
             }
         });

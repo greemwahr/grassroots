@@ -55,7 +55,7 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
     // Each state's controller can be found in controllers.js
     $stateProvider
 
-        .state('launchpage', {
+    .state('launchpage', {
         url: "/launchpage",
         templateUrl: "views/launch-page.html",
         controller: "launchPageCtrl"
@@ -63,7 +63,17 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
 
     .state('tandc', {
         url: "/terms&conditions",
-        templateUrl: "views/tandc-page.html"
+        templateUrl: "views/tandc-page.html",
+        resolve: {
+            // controller will not be loaded until $requireAuth resolves
+            // Auth refers to our $firebaseAuth wrapper in the example above
+            "currentAuth": ["Auth",
+                    function (Auth) {
+                    // $requireAuth returns a promise so the resolve waits for it to complete
+                    // If the promise is rejected, it will throw a $stateChangeError (see above)
+                    return Auth.$requireAuth();
+          }]
+        }
     })
 
     .state('observer', {
@@ -111,18 +121,20 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
     });
 
     // if none of the above states are matched, use this as the fallback
-
     $urlRouterProvider.otherwise('/launchpage');
 
 })
 
 .config(function ($ionicConfigProvider) {
+    $ionicConfigProvider.views.maxCache(10);
+    $ionicConfigProvider.templates.maxPrefetch(6);
     $ionicConfigProvider.platform.android.tabs.position('bottom');
+    $ionicConfigProvider.platform.android.navBar.alignTitle('center');
 })
 
 .config(function ($cordovaInAppBrowserProvider) {
     var defaultOptions = {
-        location: 'no',
+        location: 'yes',
         clearcache: 'yes',
         toolbar: 'no'
     };

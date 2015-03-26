@@ -7604,15 +7604,15 @@ a.button {
 
 @font-face {
   font-family: 'fontsquirrelrobotolight';
-  src: url('../fonts/RobotoCondensed-Light-webfont.svg');
-  src: url('../fonts/RobotoCondensed-Light-webfont.svg') format('svg');
+  src: url("../fonts/RobotoCondensed-Light-webfont.svg");
+  src: url("../fonts/RobotoCondensed-Light-webfont.svg") format('svg');
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'fontsquirrelrobotocondensed';
-  src: url('../fonts/RobotoCondensed-Regular-webfont.svg');
-  src: url('../fonts/RobotoCondensed-Regular-webfont.svg') format('svg');
+  src: url("../fonts/RobotoCondensed-Regular-webfont.svg");
+  src: url("../fonts/RobotoCondensed-Regular-webfont.svg") format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -7650,7 +7650,7 @@ ion-item.item-divider {
   font-size: 19px; }
 
 .launchpage {
-  background-image: url('../assets/img/africa-landscape.jpeg');
+  background-image: url("../assets/img/africa-landscape.jpeg");
   background-size: cover;
   height: auto;
   max-width: 100%; }
@@ -7683,7 +7683,7 @@ div.bar.bar-footer {
 .custom-slider-pager .custom-slider-pager-page {
   color: #000;
   display: inline-block;
-  margin: 0px 3px;
+  margin: 0 3px;
   opacity: 0.3;
   text-decoration: none;
   width: 5px; }
@@ -7698,5 +7698,26 @@ div.bar.bar-footer {
 
 .transparent {
   bottom: 0 !important;
-  min-height: 100% !important;
-  top: 0 !important; }
+  min-height: 100% !important; }
+
+.spinner svg {
+  stroke: #0d324d;
+  fill: #0d324d; }
+
+.loading-container:not(.visible) .icon {
+  display: none; }
+
+.loading-container.visible {
+  visibility: visible; }
+
+.loading-container.active {
+  opacity: 1; }
+
+.loading-container .loading {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size: 15px; }

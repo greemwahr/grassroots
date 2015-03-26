@@ -4,7 +4,7 @@
             <!-- Custom slider below main title -->
             <div class="custom-slider-pager">
                 <span class="custom-slider-pager-page" ng-repeat="i in getCount(pager.total) track by $index" ng-class="{active: pager.current === $index}">
-                <i class="icon ion-record"></i>
+                    <i class="icon ion-record"></i>
                 </span>
             </div>
 
@@ -15,11 +15,11 @@
             </ion-nav-bar>
 
             <ion-tabs class="tabs-striped tabs-color-royal tabs-icon-top">
-                <ion-tab title="National" icon="ion-ribbon-a" ui-sref="observer.national">
+                <ion-tab title="National" icon="ion-ribbon-a" ng-click="selectTabWithIndex(0)" ui-sref="observer.national">
                     <ion-nav-view name="national"></ion-nav-view>
                 </ion-tab>
 
-                <ion-tab title="Regional" icon="ion-ribbon-b" ui-sref="observer.regional">
+                <ion-tab title="Regional" icon="ion-ribbon-b" ng-click="selectTabWithIndex(1)" ui-sref="observer.regional">
                     <ion-nav-view name="regional"></ion-nav-view>
                 </ion-tab>
 
@@ -49,14 +49,14 @@
                 <ion-item nav-clear menu-close ng-click="indexSlide(1, 1)"><a class="item-icon-right"><i class="icon ion-ribbon-b"></i>State legislators</a>
                 </ion-item>
                 <ion-item class="item-divider">MORE</ion-item>
-                <ion-item nav-clear menu-close><a class="item-icon-right" href="#" onclick="window.open('http://www.getcounted.org', '_system'); return false;" style="text-decoration: none"><i class="icon ion-earth"></i>getcounted.org</a>
+                <ion-item nav-clear menu-close onclick="window.open('http://www.getcounted.org', '_system'); return false;"><a class="item-icon-right" style="text-decoration: none"><i class="icon ion-earth"></i>getcounted.org</a>
                 </ion-item>
-                <ion-item nav-clear menu-close ng-controller="socialShareCtrl"><a class="item-icon-right" ng-click="shareAnywhere()"><i class="icon ion-share"></i>Share</a>
+                <ion-item nav-clear menu-close ng-controller="socialShareCtrl" ng-click="shareAnywhere()"><a class="item-icon-right"><i class="icon ion-share"></i>Share</a>
                 </ion-item>
-                <ion-item nav-clear menu-close ng-controller="launchPageCtrl"><a class="item-icon-right" ng-click="logout()"><i class="icon ion-log-out"></i>Logout</a>
+                <ion-item nav-clear menu-close ng-controller="launchPageCtrl" ng-click="logout()"><a class="item-icon-right"><i class="icon ion-log-out"></i>Logout</a>
                 </ion-item>
                 <ion-item class="item-divider">ABOUT</ion-item>
-                <ion-item nav-clear menu-close ng-controller="modalPageCtrl"><a class="item-icon-right" ng-click="openModal('terms')"><i class="icon ion-clipboard" ng-click="openModal('terms')"></i>Terms &amp; Conditions</a>
+                <ion-item nav-clear menu-close ng-controller="modalPageCtrl" ng-click="openModal('terms')"><a class="item-icon-right"><i class="icon ion-clipboard" ng-click="openModal('terms')"></i>Terms &amp; Conditions</a>
                 </ion-item>
                 <!-- <ion-item nav-clear menu-close><a class="item-icon-right"><i class="icon ion-card"></i>Donate</a></ion-item> -->
             </ion-list>
