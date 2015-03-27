@@ -1,6 +1,8 @@
 /**
 * collationCtrl
 *
+*
+*
 * Provides all the list of parties in Nigeria along with their logos obtained from an hardcoded json service.
 */
 
