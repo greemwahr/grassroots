@@ -59,6 +59,16 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
         url: "/launchpage",
         templateUrl: "views/launch-page.html",
         controller: "launchPageCtrl"
+        // resolve: {
+        //     // controller will not be loaded until $requireAuth resolves
+        //     // Auth refers to our $firebaseAuth wrapper in the example above
+        //     "currentAuth": ["Auth",
+        //             function (Auth) {
+        //             // $requireAuth returns a promise so the resolve waits for it to complete
+        //             // If the promise is rejected, it will throw a $stateChangeError (see above)
+        //             return Auth.$requireAuth();
+        //   }]
+        // }
     })
 
     .state('tandc', {
@@ -140,7 +150,7 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
     };
 
     document.addEventListener('deviceready', function () {
-        $cordovaInAppBrowserProvider.setDefaultOptions();
+        $cordovaInAppBrowserProvider.setDefaultOptions(defaultOptions);
     }, false);
 })
 

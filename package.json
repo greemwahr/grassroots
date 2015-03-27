@@ -24,6 +24,7 @@
     "https://github.com/bez4pieci/Phonegap-Cookies-Plugin.git",
     "https://github.com/danwilson/google-analytics-plugin.git",
     "https://github.com/apache/cordova-plugin-splashscreen.git",
-    "./engine/cordova-crosswalk-engine-c0.6.2"
+    "./engine/cordova-crosswalk-engine-c0.6.2",
+    "https://github.com/driftyco/ionic-plugins-keyboard.git"
   ]
 }

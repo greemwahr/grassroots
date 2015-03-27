@@ -1,6 +1,8 @@
 /**
  * Firebase Service Provider
  *
+ *
+ *
  * This script provides the configuration and code for tying to the Firebase BaaS.
  */
 
@@ -27,11 +29,11 @@ function fireBaseSrv($firebase, $firebaseObject) {
     // 	return $firebaseObject(resultObj);
     // }
 
-    function presidentialResults() {
-        var presResl = ref.child('election/result/presidential');
-
-        return $firebaseObject(presResl);
-    }
+    // function presidentialResults() {
+    //     var presResl = ref.child('election/result/presidential');
+    //
+    //     return $firebaseObject(presResl);
+    // }
 }
 
 // let's create a re-usable factory that generates the $firebaseAuth instance
@@ -42,6 +44,7 @@ angular.module('grassroots').factory("Auth", ["$firebaseAuth",
   }
   ]);
 
+// Factory for submitting results to the firbase BaaS.
 angular.module('grassroots').factory("ResultsService", ["$firebase",
   function ($firebase) {
         var ref = new Firebase(firebaseUrl);
@@ -51,19 +54,19 @@ angular.module('grassroots').factory("ResultsService", ["$firebase",
             submitResults: function (tabName, slideName, uid, results, geoPosition, callback) {
                 var userObj = $firebase(ref.child('election').child(tabName).child(slideName).child(uid)).$asObject();
                 userObj.submitAt = moment().format('MMMM Do YYYY, h:mm:ss a');
-                console.log(userObj.submitAt);
+                //console.log(userObj.submitAt);
                 userObj.results = results;
                 userObj.location = geoPosition;
 
                 userObj.$save().then(function (ref) {
-                    ref.key() === userObj.$id; // true
-                    console.log("User Object Saved");
+                    ref.key() === userObj.$id;
+                    //console.log("User Object Saved");
                     callback(true);
                 }, function (error) {
-                    console.log("Error:", error);
+                    //console.log("Error:", error);
                     callback(false);
                 });
             }
-        }
+        };
   }
   ]);

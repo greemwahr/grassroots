@@ -26,26 +26,30 @@ $letters: #020202;
 $tabinactive: #0d324d;
 $navlight: #f4f7f5;
 $headers: #0d324d;
+$energized: #0d324d;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: '../lib/ionic/fonts' !default;
 // Include all of Ionic
 @import 'www/lib/ionic/scss/ionic';
 // Customized font-type to use. Roboto font-type all in SVG format.
 @font-face {
-    font-family: 'fontsquirrelrobotolight';
-    src: url("../fonts/RobotoCondensed-Light-webfont.svg");
-    src: url("../fonts/RobotoCondensed-Light-webfont.svg") format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'fontsquirrelrobotolight';
+  src: url("../fonts/RobotoCondensed-Light-webfont.svg");
+  src: url("../fonts/RobotoCondensed-Light-webfont.svg") format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'fontsquirrelrobotocondensed';
-    src: url("../fonts/RobotoCondensed-Regular-webfont.svg");
-    src: url("../fonts/RobotoCondensed-Regular-webfont.svg") format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'fontsquirrelrobotocondensed';
+  src: url("../fonts/RobotoCondensed-Regular-webfont.svg");
+  src: url("../fonts/RobotoCondensed-Regular-webfont.svg") format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 // Grassroots app customization sass styles
+html {
+  font-size: 62.5%;
+}
 p,
 a,
 input,
@@ -64,111 +68,114 @@ h6,
 .h5,
 .h6,
 .item-divider {
-    color: $letters;
-    font-family: "fontsquirrelrobotolight", sans-serif;
+  color: $letters;
+  font-family: "fontsquirrelrobotolight", sans-serif;
+}
+.item.activated {
+  background-color: $light;
 }
 .col h4 {
-    color: $stable;
+  color: $stable;
 }
 .bar.bar-footer .button.button-clear h4 {
-    color: $stable;
+  color: $stable;
 }
 .bar-royal .button.button-icon {
-    color: $navlight;
+  color: $navlight;
 }
 .bar.bar-royal .title {
-    color: $navlight;
+  color: $navlight;
 }
 .tab-item {
-    font-family: "fontsquirrelrobotolight", sans-serif;
+  font-family: "fontsquirrelrobotolight", sans-serif;
 }
 .tabs-striped.tabs-color-royal .tab-item {
-    color: $tabinactive;
+  color: $tabinactive;
 }
 .tabs-striped .tabs {
-    background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, .9);
 }
 ion-item.item-divider {
-    color: $headers;
-    font-family: "fontsquirrelrobotocondensed", sans-serif;
+  color: $headers;
+  font-family: "fontsquirrelrobotocondensed", sans-serif;
 }
 .bar .title {
-    font-family: "fontsquirrelrobotocondensed", sans-serif;
-    font-size: 19px;
+  font-family: "fontsquirrelrobotocondensed", sans-serif;
+  font-size: 19px;
 }
 .launchpage {
-    background-image: url("../assets/img/africa-landscape.jpeg");
-    background-size: cover;
-    height: auto;
-    max-width: 100%;
+  background-image: url("../assets/img/africa-landscape.jpeg");
+  background-size: cover;
+  height: auto;
+  max-width: 100%;
 }
 .grass-logo {
-    display: block;
-    height: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 200px;
+  display: block;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px;
 }
 div.bar.bar-footer {
-    background: rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0);
 }
 .button.button-positive {
-    border-color: $positive;
+  border-color: $positive;
 }
 .button.button-assertive {
-    border-color: $assertive;
+  border-color: $assertive;
 }
 .custom-slider-pager {
-    height: 10px;
-    left: 0;
-    position: absolute;
-    text-align: center;
-    top: 25px;
-    width: 100%;
-    z-index: 100;
+  height: 10px;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 27px;
+  width: 100%;
+  z-index: 100;
 }
 .custom-slider-pager .custom-slider-pager-page {
-    color: #000;
-    display: inline-block;
-    margin: 0 3px;
-    opacity: 0.3;
-    text-decoration: none;
-    width: 5px;
+  color: #000;
+  display: inline-block;
+  margin: 0 3px;
+  opacity: 0.3;
+  text-decoration: none;
+  width: 5px;
 }
 .custom-slider-pager .custom-slider-pager-page.active {
-    opacity: 1;
-    -webkit-transition: opacity 0.4s ease-in;
-    transition: opacity 0.4s ease-in;
+  opacity: 1;
+  -webkit-transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s ease-in;
 }
 .custom-slider-pager .icon {
-    font-size: 8px;
+  font-size: 8px;
 }
 .transparent {
-    bottom: 0 !important;
-    min-height: 100% !important;
-    // top: 0 !important;
+  bottom: 0 !important;
+  min-height: 100% !important;
+  // top: 0 !important;
 }
 .spinner svg {
-    stroke: $tabinactive;
-    fill: $tabinactive;
+  stroke: $tabinactive;
+  fill: $tabinactive;
 }
 .loading-container:not(.visible) .icon {
-    display: none;
+  display: none;
 }
 .loading-container.visible {
-    visibility: visible;
+  visibility: visible;
 }
 .loading-container.active {
-    opacity: 1;
+  opacity: 1;
 }
 .loading-container .loading {
-    padding: 20px;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0);
-    color: #fff;
-    text-align: center;
-    text-overflow: ellipsis;
-    font-size: 15px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size: 15px;
 }
 // .slider-pager {
 //   position: absolute;

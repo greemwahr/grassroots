@@ -54,15 +54,19 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb, $rootSco
 
     //Logout method
     $scope.logout = function () {
-        console.log('logout');
+        //console.log('logout');
         fireBaseSrv.ref().unauth();
+        //console.log('logout2');
         $state.go('launchpage');
+        //console.log('logout3');
         $rootScope.loggedInUserID = "";
+        //console.log($rootScope.loggedInUserID);
         $scope.user = null;
         ezfb.getLoginStatus(function (response) {
             if (response && response.status === 'connected') {
                 ezfb.logout();
             }
         });
+        console.log('logout4');
     };
 }

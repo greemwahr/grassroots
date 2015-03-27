@@ -10,7 +10,7 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
     'use strict';
 
     // A confirm dialog box to get the GPS location.
-    $scope.showConfirm = function () {
+    $scope.showConfirm = function() {
         sweet.show({
                 title: 'Polling Booth location',
                 text: 'Are you at the polling booth where the votes were counted?',
@@ -23,23 +23,30 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
                 closeOnCancel: false
             },
 
-            function (isConfirm) {
+            function(isConfirm) {
                 if (isConfirm) {
                     sweet.show({
                         title: 'Polling Booth location',
                         text: 'Thank you, Tap OK and your collated results will be submitted.',
                         type: 'success',
                         showCancelButton: true
-                    }, function (isOk) {
+                    }, function(isOk) {
                         if (isOk) {
                             // Tab Name
                             var path = $location.$$path;
+                            //console.log('path: '+ path);
                             var tabName = path.split('/')[2];
 
                             // Slide Name
-                            var slideName = $rootScope.data.currentViewTitle;
+                            var slideName = '';
+                            if (tabName === 'national') {
+                                slideName = $rootScope.data.currentViewTitle;
+                            } else {
+                                slideName = $rootScope.data.currentViewTitleii;
+                            }
                             slideName = slideName.replace(" ", "-");
                             slideName = slideName.toLowerCase();
+                            //console.log('slide: ' + slideName);
 
                             // Processing Results to Store in Firebase
                             var completeResults = processResultsArray($scope.partyAbbr, slideName);
@@ -56,7 +63,7 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
                                 enableHighAccuracy: true
                             };
 
-                            $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
+                            $cordovaGeolocation.getCurrentPosition(posOptions).then(function(position) {
                                 var lat = position.coords.latitude;
                                 var long = position.coords.longitude;
                                 //alert("Lat is :" + lat + " & Long is :" + long);
@@ -66,7 +73,7 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
                                     longitude: long
                                 };
                                 // Call my SubmitResults Service
-                                ResultsService.submitResults(tabName, slideName, uid, completeResults, geoPosition, function (status) {
+                                ResultsService.submitResults(tabName, slideName, uid, completeResults, geoPosition, function(status) {
                                     if (status) {
                                         //console.log("Data Submission Successful");
                                         resetResults($scope.partyAbbr, slideName);
@@ -76,14 +83,14 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
 
                                 });
 
-                            }, function (err) {
+                            }, function(err) {
                                 console.log("Error " + err);
                             });
 
 
-                        //alert('OK is clicked');
-                    } //else {
-                            //alert('Cancel is clicked');
+                            //alert('OK is clicked');
+                        } //else {
+                        //alert('Cancel is clicked');
                         //}
                     });
                 } else {
