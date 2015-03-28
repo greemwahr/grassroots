@@ -7659,6 +7659,9 @@ ion-item.item-divider {
   font-family: "fontsquirrelrobotocondensed", sans-serif;
   font-size: 19px; }
 
+.bar .button {
+  padding: 0px 0px; }
+
 .launchpage {
   background-image: url("../assets/img/africa-landscape.jpeg");
   background-size: cover;
