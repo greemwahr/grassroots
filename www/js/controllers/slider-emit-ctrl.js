@@ -15,8 +15,8 @@ function sliderEmitCtrl($rootScope, $state, $ionicSlideBoxDelegate) {
     $rootScope.data = {
         numViewableSlides: 0,
         slideIndex: 0,
-        currentViewTitle: "",
-        currentViewTitleii: ""
+        currentViewTitle: 0,
+        currentViewTitleii: 0
     };
 
     var emitSlideBoxChanged = function () {

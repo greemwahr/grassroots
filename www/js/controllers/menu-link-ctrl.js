@@ -7,7 +7,7 @@
 
 angular.module('grassroots').controller('menuLinkCtrl', ['$scope', '$state', '$ionicSideMenuDelegate', '$ionicTabsDelegate', '$ionicSlideBoxDelegate', menuLinkCtrl]);
 
-function menuLinkCtrl($scope, $state, $ionicSideMenuDelegate, $ionicTabsDelegate, $ionicSlideBoxDelegate) {
+function menuLinkCtrl($scope, $state, $ionicSideMenuDelegate, $ionicTabsDelegate, $ionicSlideBoxDelegate, $ionicNavBarDelegate) {
     'use strict';
 
 
@@ -22,6 +22,10 @@ function menuLinkCtrl($scope, $state, $ionicSideMenuDelegate, $ionicTabsDelegate
 
     $scope.selectTabWithIndex = function (index) {
         $ionicTabsDelegate.select(index);
+    };
+
+    $scope.nextSlide = function() {
+        $ionicSlideBoxDelegate.next();
     };
 
     $ionicSideMenuDelegate.canDragContent(false);

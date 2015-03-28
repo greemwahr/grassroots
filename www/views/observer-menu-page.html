@@ -1,14 +1,8 @@
 <ion-side-menus>
     <ion-pane ion-side-menu-content drag-content="false">
-        <div ng-controller="sliderCtrl">
-            <!-- Custom slider below main title -->
-            <div class="custom-slider-pager">
-                <span class="custom-slider-pager-page" ng-repeat="i in getCount(pager.total) track by $index" ng-class="{active: pager.current === $index}">
-                    <i class="icon ion-record"></i>
-                </span>
-            </div>
-
+        <div>
             <ion-nav-bar class="bar-royal">
+                <ion-nav-back-button></ion-nav-back-button>
                 <ion-nav-buttons side="left">
                     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
                 </ion-nav-buttons>
@@ -23,9 +17,9 @@
                     <ion-nav-view name="regional"></ion-nav-view>
                 </ion-tab>
 
-                <!-- <ion-tab title="Record" icon="ion-ios-copy" ui-sref="observer.record">
+                <ion-tab title="Record" icon="ion-ios-copy" ui-sref="observer.record">
                     <ion-nav-view name="record"></ion-nav-view>
-                </ion-tab> -->
+                </ion-tab>
             </ion-tabs>
         </div>
     </ion-pane>

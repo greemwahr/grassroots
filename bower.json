@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "sweetalert": "~0.4.2",
-    "angular-h-sweetalert": "~1.4.1"
+    "angular-h-sweetalert": "~1.4.1",
+    "angular-toArrayFilter": "~1.0.0"
   }
 }

@@ -7623,6 +7623,10 @@ p, a, input, button, textarea, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, 
   color: #020202;
   font-family: "fontsquirrelrobotolight", sans-serif; }
 
+strong {
+  font-family: "fontsquirrelrobotolight", sans-serif;
+  font-size: 14px; }
+
 .item.activated {
   background-color: #fff; }
 
@@ -7676,31 +7680,6 @@ div.bar.bar-footer {
 
 .button.button-assertive {
   border-color: #db162f; }
-
-.custom-slider-pager {
-  height: 10px;
-  left: 0;
-  position: absolute;
-  text-align: center;
-  top: 27px;
-  width: 100%;
-  z-index: 100; }
-
-.custom-slider-pager .custom-slider-pager-page {
-  color: #000;
-  display: inline-block;
-  margin: 0 3px;
-  opacity: 0.3;
-  text-decoration: none;
-  width: 5px; }
-
-.custom-slider-pager .custom-slider-pager-page.active {
-  opacity: 1;
-  -webkit-transition: opacity 0.4s ease-in;
-  transition: opacity 0.4s ease-in; }
-
-.custom-slider-pager .icon {
-  font-size: 8px; }
 
 .transparent {
   bottom: 0 !important;

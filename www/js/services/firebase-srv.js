@@ -16,24 +16,6 @@ function fireBaseSrv($firebase, $firebaseObject) {
     var ref = new Firebase(firebaseUrl);
 
     return ref;
-
-    // function electionResults() {
-    // 	var resultObj  = {
-    // 		'presidential' : ref.child('election/result/presidential'),
-    // 		'senatorial': ref.child('election/result/senatorial'),
-    // 		'natleg': ref.child('election/result/natleg'),
-    // 		'gubernatorial' : ref.child('election/result/gubernatorial'),
-    // 		'stateleg': ref.child('election/result/stateleg')
-    // 	};
-    //
-    // 	return $firebaseObject(resultObj);
-    // }
-
-    // function presidentialResults() {
-    //     var presResl = ref.child('election/result/presidential');
-    //
-    //     return $firebaseObject(presResl);
-    // }
 }
 
 // let's create a re-usable factory that generates the $firebaseAuth instance
@@ -45,14 +27,14 @@ angular.module('grassroots').factory("Auth", ["$firebaseAuth",
   ]);
 
 // Factory for submitting results to the firbase BaaS.
-angular.module('grassroots').factory("ResultsService", ["$firebase",
-  function ($firebase) {
+angular.module('grassroots').factory("ResultsService", ["$firebaseObject",
+  function ($firebaseObject) {
         var ref = new Firebase(firebaseUrl);
 
 
         return {
             submitResults: function (tabName, slideName, uid, results, geoPosition, callback) {
-                var userObj = $firebase(ref.child('election').child(tabName).child(slideName).child(uid)).$asObject();
+                var userObj = $firebaseObject(ref.child('election').child(tabName).child(slideName).child(uid));
                 userObj.submitAt = moment().format('MMMM Do YYYY, h:mm:ss a');
                 //console.log(userObj.submitAt);
                 userObj.results = results;

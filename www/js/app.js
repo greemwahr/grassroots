@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetAlert'])
+angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetAlert', 'angular-toArrayFilter'])
 
 .run(function ($ionicPlatform, $cordovaToast, $rootScope, Auth) {
     $ionicPlatform.ready(function () {
@@ -35,7 +35,7 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
 
         $rootScope.loggedInUserID = "";
         var authData = Auth.$getAuth();
-        //console.log(authData);
+        console.log(authData);
         if (authData) {
             $rootScope.loggedInUserID = authData.uid;
 
@@ -107,7 +107,8 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
         url: "/national",
         views: {
             'national': {
-                templateUrl: "views/national-results-page.html"
+                templateUrl: "views/national-results-page.html",
+                controller: "menuLinkCtrl"
             }
         }
     })
@@ -141,6 +142,7 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
     $ionicConfigProvider.templates.maxPrefetch(6);
     $ionicConfigProvider.platform.android.tabs.position('bottom');
     $ionicConfigProvider.platform.android.navBar.alignTitle('center');
+    $ionicConfigProvider.backButton.text(false).icon('ion-ios-arrow-left');
 })
 
 .config(function ($cordovaInAppBrowserProvider) {

@@ -1,0 +1,73 @@
+<ion-view title="My Record">
+    <ion-nav-buttons side="secondary">
+      <button class="button button-icon icon ion-ios-arrow-forward" ng-click="nextSlide()"></button>
+    </ion-nav-buttons>
+    <ion-content class="transparent" overflow-scroll="true">
+        <ion-slide-box >
+            <ion-slide>
+                <div class="list">
+                    <div class="item item-divider">
+                        Presidential
+                    </div>
+                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray : false | orderBy : 'abbr'">
+                        <!-- <img ng-src="{{partyAbbr.avatar}}"> -->
+                        <h3>{{partyAbbr.abbr}}</h3>
+                        <strong>{{partyAbbr.results}}</strong>
+                    </a>
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="list">
+                    <div class="item item-divider">
+                        Senatorial
+                    </div>
+                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray : false | orderBy : 'abbr'">
+                        <!-- <img ng-src="{{partyAbbr.avatar}}"> -->
+                        <h3>{{partyAbbr.abbr}}</h3>
+                        <strong>{{partyAbbr.results}}</strong>
+                    </a>
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="list">
+                    <div class="item item-divider">
+                        National Legislator
+                    </div>
+                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray : false | orderBy : 'abbr'">
+                        <!-- <img ng-src="{{partyAbbr.avatar}}"> -->
+                        <h3>{{partyAbbr.abbr}}</h3>
+                        <strong>{{partyAbbr.results}}</strong>
+                    </a>
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="list">
+                    <div class="item item-divider">
+                        Gubernatorial
+                    </div>
+                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray : false | orderBy : 'abbr'">
+                        <!-- <img ng-src="{{partyAbbr.avatar}}"> -->
+                        <h3>{{partyAbbr.abbr}}</h3>
+                        <strong>{{partyAbbr.results}}</strong>
+                    </a>
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="list">
+                    <div class="item item-divider">
+                        State Legislator
+                    </div>
+                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray : false | orderBy : 'abbr'">
+                        <!-- <img ng-src="{{partyAbbr.avatar}}"> -->
+                        <h3>{{partyAbbr.abbr}}</h3>
+                        <strong>{{partyAbbr.results}}</strong>
+                    </a>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

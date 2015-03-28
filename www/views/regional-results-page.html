@@ -1,4 +1,7 @@
 <ion-view view-title="{{data.currentViewTitleii}}">
+    <ion-nav-buttons side="secondary">
+      <button class="button button-icon icon ion-ios-arrow-forward" ng-click="nextSlide()"></button>
+    </ion-nav-buttons>
     <ion-content class="transparent" ng-controller="collationCtrl" overflow-scroll="true">
         <div ng-controller="sliderEmitCtrl">
             <ion-slide-box on-slide-changed="slideChangedii(index)">

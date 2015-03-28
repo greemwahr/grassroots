@@ -13,8 +13,6 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb, $rootSco
 
     //Login method
     $scope.login = function () {
-        loaderSrv.show();
-
         fireBaseSrv.ref().authWithOAuthPopup("facebook", function (error, authData) {
             if (error) {
                 console.log("Login Failed", error);
@@ -24,7 +22,6 @@ function launchPageCtrl($state, $scope, $ionicModal, fireBaseSrv, ezfb, $rootSco
                 $scope.user = fireBaseSrv.ref().getAuth();
 
                 if ($scope.user !== null) {
-                    loaderSrv.hide();
                     $state.go('observer.national');
                 }
             }
