@@ -79,7 +79,7 @@ function gubPageCtrl($scope, $rootScope, $firebaseObject, $firebaseArray, inecSr
         var fyrebaseAuth = recfyre.getAuth();
         var syncPres;
         if (fyrebaseAuth) {
-            syncPres = $firebaseObject(recfyre.child("election/national/gubernatorial/" + fyrebaseAuth.uid + "/results"));
+            syncPres = $firebaseObject(recfyre.child("election/regional/gubernatorial/" + fyrebaseAuth.uid + "/results"));
             syncPres.$bindTo($scope, "partyAbbr");
         }
     };
@@ -99,7 +99,7 @@ function staPageCtrl($scope, $rootScope, $firebaseObject, $firebaseArray, inecSr
         var fyrebaseAuth = recfyre.getAuth();
         var syncPres;
         if (fyrebaseAuth) {
-            syncPres = $firebaseObject(recfyre.child("election/national/state-legislator/" + fyrebaseAuth.uid + "/results"));
+            syncPres = $firebaseObject(recfyre.child("election/regional/state-legislator/" + fyrebaseAuth.uid + "/results"));
             syncPres.$bindTo($scope, "partyAbbr");
         }
     };

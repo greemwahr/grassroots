@@ -8,7 +8,6 @@ var async = require('async');
 var foldersToProcess = [
     'js',
     'js/controllers',
-    'js/firebase',
     'js/services'
 ];
 

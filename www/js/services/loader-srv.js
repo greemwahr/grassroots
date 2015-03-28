@@ -24,5 +24,5 @@ function loaderSrv($rootScope, $ionicLoading) {
         hide: function() {
             $ionicLoading.hide();
         }
-    }
+    };
 }

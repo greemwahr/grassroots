@@ -41,7 +41,7 @@ angular.module('grassroots').factory("ResultsService", ["$firebaseObject",
                 userObj.location = geoPosition;
 
                 userObj.$save().then(function (ref) {
-                    ref.key() === userObj.$id;
+                    //ref.key() === userObj.$id;
                     //console.log("User Object Saved");
                     callback(true);
                 }, function (error) {
