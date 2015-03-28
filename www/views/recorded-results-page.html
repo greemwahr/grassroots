@@ -3,13 +3,13 @@
       <button class="button button-icon icon ion-ios-arrow-forward" ng-click="nextSlide()"></button>
     </ion-nav-buttons>
     <ion-content class="transparent" overflow-scroll="true">
-        <ion-slide-box >
-            <ion-slide>
+        <ion-slide-box>
+            <ion-slide ng-controller="presPageCtrl">
                 <div class="list">
                     <div class="item item-divider">
                         Presidential
                     </div>
-                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray : false | orderBy : 'abbr'">
+                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray:false | orderBy:'abbr'">
                         <!-- <img ng-src="{{partyAbbr.avatar}}"> -->
                         <h3>{{partyAbbr.abbr}}</h3>
                         <strong>{{partyAbbr.results}}</strong>
@@ -17,12 +17,12 @@
                 </div>
             </ion-slide>
 
-            <ion-slide>
+            <ion-slide ng-controller="senPageCtrl">
                 <div class="list">
                     <div class="item item-divider">
                         Senatorial
                     </div>
-                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray : false | orderBy : 'abbr'">
+                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray:false | orderBy:'abbr'">
                         <!-- <img ng-src="{{partyAbbr.avatar}}"> -->
                         <h3>{{partyAbbr.abbr}}</h3>
                         <strong>{{partyAbbr.results}}</strong>
@@ -30,12 +30,12 @@
                 </div>
             </ion-slide>
 
-            <ion-slide>
+            <ion-slide ng-controller="natPageCtrl">
                 <div class="list">
                     <div class="item item-divider">
                         National Legislator
                     </div>
-                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray : false | orderBy : 'abbr'">
+                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray:false | orderBy:'abbr'">
                         <!-- <img ng-src="{{partyAbbr.avatar}}"> -->
                         <h3>{{partyAbbr.abbr}}</h3>
                         <strong>{{partyAbbr.results}}</strong>
@@ -44,11 +44,11 @@
             </ion-slide>
 
             <ion-slide>
-                <div class="list">
+                <div class="list" ng-controller="gubPageCtrl">
                     <div class="item item-divider">
                         Gubernatorial
                     </div>
-                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray : false | orderBy : 'abbr'">
+                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray:false | orderBy:'abbr'">
                         <!-- <img ng-src="{{partyAbbr.avatar}}"> -->
                         <h3>{{partyAbbr.abbr}}</h3>
                         <strong>{{partyAbbr.results}}</strong>
@@ -57,11 +57,11 @@
             </ion-slide>
 
             <ion-slide>
-                <div class="list">
+                <div class="list" ng-controller="staPageCtrl">
                     <div class="item item-divider">
                         State Legislator
                     </div>
-                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray : false | orderBy : 'abbr'">
+                    <a class="item" ng-repeat="partyAbbr in partyAbbr | toArray:false | orderBy:'abbr'">
                         <!-- <img ng-src="{{partyAbbr.avatar}}"> -->
                         <h3>{{partyAbbr.abbr}}</h3>
                         <strong>{{partyAbbr.results}}</strong>

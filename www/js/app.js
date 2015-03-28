@@ -126,8 +126,7 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
         url: "/record",
         views: {
             'record': {
-                templateUrl: "views/recorded-results-page.html",
-                controller: "recordPageCtrl"
+                templateUrl: "views/recorded-results-page.html"
             }
         }
     });

@@ -15,8 +15,8 @@ function sliderEmitCtrl($rootScope, $state, $ionicSlideBoxDelegate) {
     $rootScope.data = {
         numViewableSlides: 0,
         slideIndex: 0,
-        currentViewTitle: 0,
-        currentViewTitleii: 0
+        currentViewTitle: 'Presidential',
+        currentViewTitleii: 'Gubernatorial'
     };
 
     var emitSlideBoxChanged = function () {
@@ -25,16 +25,6 @@ function sliderEmitCtrl($rootScope, $state, $ionicSlideBoxDelegate) {
             numberOfSlides: $rootScope.data.numViewableSlides
         });
     };
-
-    // var countSlides = function() {
-    //     $rootScope.data.numViewableSlides = 0;
-    //     if($rootScope.data.slides !== null) {
-    //         $rootScope.data.numViewableSlides === $rootScope.data.slides;
-    //     }
-    //     console.log($rootScope.data.numViewableSlides + "viewable slides");
-    // };
-    //
-    // countSlides();
 
     // Called each time the slide changes on National tab.
     $rootScope.slideChanged = function (index) {

@@ -5,11 +5,14 @@
  * Also used obtain the current tabs and slide index and in conjunction with JSON file display the view title.
  */
 
-angular.module('grassroots').controller('menuLinkCtrl', ['$scope', '$state', '$ionicSideMenuDelegate', '$ionicTabsDelegate', '$ionicSlideBoxDelegate', menuLinkCtrl]);
+angular.module('grassroots').controller('menuLinkCtrl', ['$scope', '$rootScope', '$state', '$ionicSideMenuDelegate', '$ionicTabsDelegate', '$ionicSlideBoxDelegate', menuLinkCtrl]);
 
-function menuLinkCtrl($scope, $state, $ionicSideMenuDelegate, $ionicTabsDelegate, $ionicSlideBoxDelegate, $ionicNavBarDelegate) {
+function menuLinkCtrl($scope, $rootScope, $state, $ionicSideMenuDelegate, $ionicTabsDelegate, $ionicSlideBoxDelegate, $ionicNavBarDelegate) {
     'use strict';
 
+    // $rootScope.record = {
+    //     resultIndex: 0,
+    // };
 
     $scope.indexSlide = function (index1, index2) {
         $ionicTabsDelegate.select(index1);
@@ -26,6 +29,14 @@ function menuLinkCtrl($scope, $state, $ionicSideMenuDelegate, $ionicTabsDelegate
 
     $scope.nextSlide = function() {
         $ionicSlideBoxDelegate.next();
+        $rootScope.record = {
+            resultIndex: $ionicSlideBoxDelegate.currentIndex(),
+        };
+        console.log($rootScope.record.resultIndex);
+    };
+
+    $rootScope.record = {
+        resultIndex: 0,
     };
 
     $ionicSideMenuDelegate.canDragContent(false);
