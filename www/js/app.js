@@ -137,7 +137,7 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
     var defaultOptions = {
         location: 'yes',
         clearcache: 'yes',
-        toolbar: 'no'
+        toolbar: 'yes'
     };
 
     document.addEventListener('deviceready', function () {
