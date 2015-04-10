@@ -4,9 +4,9 @@
  * Controller for creating pop-ups to allow user confirm their GPS location.
  */
 
-angular.module('grassroots').controller('popUpCtrl', ['$scope', 'sweet', '$location', '$rootScope', 'ResultsService', '$cordovaGeolocation', popUpCtrl]);
+angular.module('grassroots').controller('popUpCtrl', ['$scope', 'sweet', '$location', '$rootScope', 'ResultsService', '$cordovaGeolocation', 'loaderSrv', popUpCtrl]);
 
-function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordovaGeolocation) {
+function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordovaGeolocation, loaderSrv) {
     'use strict';
 
     // A confirm dialog box to get the GPS location.
@@ -32,6 +32,8 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
                         showCancelButton: true
                     }, function(isOk) {
                         if (isOk) {
+                            // Showing loading-spinner
+                            loaderSrv.show();
                             // Tab Name
                             var path = $location.$$path;
                             //console.log('path: '+ path);
@@ -82,16 +84,13 @@ function popUpCtrl($scope, sweet, $location, $rootScope, ResultsService, $cordov
                                     }
 
                                 });
-
                             }, function(err) {
+                                sweet.show('Oops...', 'GPS is not enabled on your device. Please go to you device settings and enable.', 'error');
                                 console.log("Error " + err);
                             });
-
-
-                            //alert('OK is clicked');
-                        } //else {
-                        //alert('Cancel is clicked');
-                        //}
+                            // Hiding loading-spinner
+                            loaderSrv.hide();
+                        }
                     });
                 } else {
                     sweet.show('Requirement!', 'You have to be at the polling booth to submit the results. This is to ensure accurate result collection.', 'error');

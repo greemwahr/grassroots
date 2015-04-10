@@ -1,12 +1,12 @@
 <ion-view title="My Record">
     <ion-nav-buttons side="secondary">
-        <button class="button button-icon icon ion-ios-arrow-forward" ng-click="nextSlide()"></button>
+        <button class="button button-icon icon ion-ios-arrow-forward" ng-click="nextSlide()" ng-show="data.slideIndex < 4"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="primary">
-        <button class="button button-icon icon ion-ios-arrow-back" ng-click="prevSlide()"></button>
+        <button class="button button-icon icon ion-ios-arrow-back" ng-click="prevSlide()" ng-show="data.slideIndex > 0"></button>
     </ion-nav-buttons>
-    <ion-content class="transparent" overflow-scroll="true">
-        <ion-slide-box>
+    <ion-content class="transparent" has-bouncing="true">
+        <ion-slide-box on-slide-changed="slideChanged($index)">
             <ion-slide ng-controller="presPageCtrl">
                 <div class="list">
                     <div class="item item-divider">

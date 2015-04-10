@@ -17,7 +17,8 @@ function loaderSrv($rootScope, $ionicLoading) {
             $rootScope.loading = $ionicLoading.show({
                 template: '<ion-spinner icon="bubbles" class="spinner-tabinactive"></ion-spinner>',
                 noBackdrop: true,
-                delay: 100
+                delay: 1000,
+                duration: 30000
             });
         },
 

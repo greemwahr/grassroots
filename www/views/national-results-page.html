@@ -1,13 +1,13 @@
 <ion-view view-title="{{data.currentViewTitle}}">
     <ion-nav-buttons side="secondary">
-      <button class="button button-icon icon ion-ios-arrow-forward" ng-click="nextSlide()"></button>
+      <button class="button button-icon icon ion-ios-arrow-forward" ng-click="nextSlide()" ng-show="data.slideIndex < 2"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="primary">
-      <button class="button button-icon icon ion-ios-arrow-back" ng-click="prevSlide()"></button>
+      <button class="button button-icon icon ion-ios-arrow-back" ng-click="prevSlide()" ng-show="data.slideIndex > 0"></button>
     </ion-nav-buttons>
-    <ion-content class="transparent" ng-controller="collationCtrl" overflow-scroll="true">
+    <ion-content class="transparent" ng-controller="collationCtrl" has-bouncing="true">
         <div ng-controller="sliderEmitCtrl">
-            <ion-slide-box on-slide-changed="slideChanged(index)">
+            <ion-slide-box on-slide-changed="slideChanged($index)">
                 <ion-slide>
                     <div class="list">
                         <a class="item item-avatar" ng-repeat="partyAbbr in partyAbbr">

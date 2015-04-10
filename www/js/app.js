@@ -98,7 +98,6 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
         views: {
             'national': {
                 templateUrl: "views/national-results-page.html",
-                controller: "menuLinkCtrl"
             }
         }
     })
@@ -131,6 +130,8 @@ angular.module('grassroots', ['ionic', 'ngCordova', 'firebase', 'ezfb', 'hSweetA
     $ionicConfigProvider.templates.maxPrefetch(6);
     $ionicConfigProvider.platform.android.tabs.position('bottom');
     $ionicConfigProvider.platform.android.navBar.alignTitle('center');
+    // Allows native scrolling on Android 4.1+
+    if(!ionic.Platform.isIOS())$ionicConfigProvider.scrolling.jsScrolling(false);
 })
 
 .config(function ($cordovaInAppBrowserProvider) {
