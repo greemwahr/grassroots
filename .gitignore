@@ -5,6 +5,10 @@ node_modules/
 platforms/
 plugins/
 .DS_Store
+.gitignore
+
+# Build files
+www/www.esproj/
 
 # Built application files
 *.apk
